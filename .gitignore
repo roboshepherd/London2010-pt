@@ -1,0 +1,8 @@
+example.tex
+*.aux
+*.dvi
+*.log
+*.toc
+*.dia~
+*.ps
+*#
