@@ -1,4 +1,110 @@
-\documentclass[german,10pt]{beamer}
+% Setup appearance:
+\documentclass{beamer}
+\usetheme{Darmstadt}
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
 
-\input{beamerexample-lecture-style.tex}
-\input{main.tex}
+
+% Standard packages
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+
+% Setup TikZ
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+
+% Author, Title, etc.
+
+\title[Robotic Validation of AFM and Beyond] 
+{%
+  Robotic Validation of AFM, Scale-freeness, Local Communication etc.%
+}
+
+\author[MOFSarker]
+{
+  Md Omar Faruque Sarker
+}
+
+\institute[UWN]
+{
+ Robotic Intelligence Lab\\
+ University of Wales, Newport
+}
+
+\date{May 2010}
+
+
+
+% The main document
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+
+\section{Introduction}
+
+\subsection{The Model and the Problem}
+
+\begin{frame}{What is haplotyping and why is it important?}
+  You hopefully know this after the previous three talks\dots
+\end{frame}
+
+\begin{frame}[t]{General formalization of haplotyping.}
+  \begin{block}{Inputs}
+    \begin{itemize}
+    \item A \alert{genotype matrix} $G$.
+    \item The \alert{rows} of the matrix are \alert{taxa / individuals}.
+    \item The \alert{columns} of the matrix are \alert{SNP sites /
+        characters}. 
+    \end{itemize}
+  \end{block}
+  \begin{block}{Outputs}
+    \begin{itemize}
+    \item A \alert{haplotype matrix} $H$.
+    \item Pairs of rows in $H$ \alert{explain} the rows of $G$.
+    \item The haplotypes in $H$ are \alert{biologically plausible}. 
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}[t]{Our formalization of haplotyping.}
+  \begin{block}{Inputs}
+    \begin{itemize}
+    \item A genotype matrix $G$.
+    \item The rows of the matrix are individuals / taxa.
+    \item The columns of the matrix are SNP sites / characters.
+    \item<alert@1->
+      The problem is directed: one haplotype is known.
+    \item<alert@1->
+      The input is biallelic: there are only two homozygous
+      states (0 and 1) and one heterozygous state (2).
+    \end{itemize}
+  \end{block}
+  \begin{block}{Outputs}
+    \begin{itemize}
+    \item A haplotype matrix $H$.
+    \item Pairs of rows in $H$ explain the rows of $G$.
+    \item<alert@1> The haplotypes in $H$ form a perfect phylogeny.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+
+\end{document}
+
+

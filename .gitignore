@@ -1,4 +1,7 @@
 example.tex
+*.nav
+*.snm
+*.out
 *.aux
 *.dvi
 *.log
