@@ -256,56 +256,324 @@ S_{j}^{i} = tanh\{\frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\}
 \end{frame}
 %%--------------------------------------------------
 \begin{frame}[t]{Related issues for using AFM in real-world application}
-  \begin{itemize}
-    \item \alert{Modelling tasks and urgencies}
-    \end{itemize}
-\end{frame}
+\begin{columns}
+\column{0.6\textwidth}
+\begin{figure}
+\centering
+\includegraphics[height=0.6\textwidth, angle=0]
+{/media/Preload/Pub2010/RAS-Draft/images/RILCamcorderSnapshot1.eps}
+%figure caption is below the figur
+\caption{\scriptsize Modelling real-world application to a laboratory scenario}
+\label{fig:self-org-agent} % Give a unique label
+\end{figure}
+\column{0.53\textwidth}
+\begin{block}{\small Map tasks \& robot capabilities}
+\begin{enumerate}
+\item \scriptsize workload $\Leftrightarrow$ task-urgency
+\item \scriptsize work done $ \Leftrightarrow$ task-urgency decrease \item \scriptsize work pending $ \Leftrightarrow$ task-urgency increase
+\end{enumerate}
+\end{block}
+\begin{block}{\small Enable continuous flow of info}
+\begin{enumerate}
+\item \scriptsize Centralized communication 
+\item \scriptsize Local communication
+\item \scriptsize Stigmergic communication
+\end{enumerate}
+\end{block}
+\end{columns}  
+\end{frame}	
+%-----------------------------------------------------------
+\begin{frame}[t]{A Manufacturing Shop-Floor Interpretation of AFM}
+\begin{columns}
+\column{0.6\textwidth}
+\begin{figure}
+\centering
+\includegraphics[height=0.6\textwidth, angle=0]
+{/media/Preload/Pub2010/RAS-Draft/images/VSP.eps}
+%figure caption is below the figur
+\caption{\scriptsize Production and maintenance cycle of a manufacturing shop-floor}
+\label{fig:vsp} % Give a unique label
+\end{figure}
+\column{0.53\textwidth}
+\begin{scriptsize}
+      \begin{tabular}{p{0.7in}|p{1.2in}}
+      \hline
+      \alert{Initial task \protect\newline urgency} & \scriptsize workload x $ \delta \phi_{INC}$\\
+      \hline
+      \alert{If task \protect\newline unattended} & \scriptsize work-load increases by $\delta \phi_{INC}$\\
+     \hline
+     \alert{If task served} & \scriptsize work-load decreases by $\delta \phi_{DEC}$\\
+	\hline
+	\alert{Average \protect\newline Production Completion Delay (APCD)} &  (\textit{Ideal production time} - \textit{Actual production time})/  \textit{Ideal production time} \\
+	\hline
+	\alert{Average \protect\newline Pending Maintenance Work (APMW)} & (\textit{Total pending maintenance work in all machines})/\textit{Total no. of machines.}\\
+	\hline
+      \end{tabular}
+\end {scriptsize}
+\end{columns}  
+\end{frame}	
 %%%===========================================================
 \section{Communication Models}
 \begin{frame}[t]{Centralized and Local Communication Models}
-  \begin{itemize}
-    \item \alert{Software code on {\em HEAD}}
-    \end{itemize}
-\end{frame}
-
+\begin{columns}
+\column{0.6\textwidth}
+\begin{figure}
+\centering
+\includegraphics[height=0.6\textwidth, angle=0]
+{/media/Preload/Pub2010/RAS-Draft/images/CentralizedComm.eps}
+%figure caption is below the figur
+\caption{\scriptsize A centralized communication scheme}
+\label{fig:vsp} % Give a unique label
+\end{figure}
+\column{0.6\textwidth}
+\begin{scriptsize}
+      \begin{tabular}{p{0.9in}|p{1in}}
+      \hline
+      \alert{Centralized Model} & \alert{Local Model}\\
+      \hline
+      Global \alert{broadcast} messaging & Local \alert{peer-to-peer} messaging\\
+      \hline
+      Communicate synchronously & Communicate when peer(s) come in close contact (inside range $r_{comm}$)\\
+      \hline
+      Modelled after \alert{\textit{Polistes} wasps}:
+      global sensing no peer-to-peer communication & Modelled after \protect\newline \alert{\textit{Polybia} wasps}: \protect\newline
+      local sensing local communication\\	  	
+	  \hline
+      \end{tabular}
+\end {scriptsize}
+\end{columns}  
+\end{frame}	
 %%%===========================================================
 \section{Implementation}
 \begin{frame}[t]{Hybrid-event Driven Architecture on D-Bus}
-  \begin{itemize}
-    \item \alert{}
-    \end{itemize}
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth, angle=0]
+{/media/Preload/Pub2010/RAS-Draft/images/RIL-Expt-Setup1.eps}
+%figure caption is below the figure
+\caption{\scriptsize Hardware and software setup for centralized communication experiments}
+\label{fig:RIL-Expt-Setup1} % Give a unique label
+\end{figure}
+\end{frame}
+%---------------------------------------------------
+\begin{frame}[t]{Tracking e-puck robots}
+\begin{columns}
+\column{0.8\linewidth}
+\begin{figure}
+\centering
+\subfigure[SwisTrack multi-robot tracker]
+{
+\includegraphics[width=0.85\linewidth]
+{/media/Preload/Pub2010/RAS-Draft/images/SwisTrackScreenshot.eps}
+}
+\end{figure}
+\column{0.25\linewidth}
+\begin{figure}
+\subfigure[E-puck robot]{
+\includegraphics[width=2.8cm, height=2.5cm]{/media/Preload/Pub2010/RAS-Draft/images/epuck-happy.eps}
+}
+\label{fig:e-puck}
+\end{figure}
+%%
+\begin{figure}
+\subfigure[E-puck marker]{
+\includegraphics[width=2.5cm, height=1.8cm]{/media/Preload/Pub2010/RAS-Draft/images/20-31412.eps}
+}
+\label{fig:e-puck}
+\end{figure}
+\end{columns}
 \end{frame}
 %%%===========================================================
 \section{Results}
 %---------------------------------------------------------------
-\begin{frame}[t]{Results: Shop-floor Work-load and Active Workers}
-  \begin{itemize}
-    \item \alert{}
-    \end{itemize}
+\begin{frame}[t]{Results: Shop-floor Work-load and Active Workers }
+\begin{columns}
+\column{0.5\linewidth}
+\begin{figure}
+\centering
+%\subfigure[\small Changes in task-urgency (CCM)]{
+\includegraphics[width=0.85\linewidth]
+{/media/Preload/Pub2010/RAS-Draft/images/SB-PlotUrgencyLog-2010May10-115549.eps}
+%}
+\caption{\scriptsize Changes in task-urgency}
+\end{figure}
+%%
+\vspace*{-0.5cm}
+\begin{scriptsize}
+\alert{Shop-floor work-load:}\\
+Sum of changes in task-urgencies of\\ all $M$ tasks at $(q+1)^{th}$ step:
+\begin{equation} 
+\Delta \Phi_{j, q+1} = \sum_{j=1}^{M} (\phi_{j, q+1} - \phi_{j, q})
+\label{eqn:Delta-Phi}
+\end{equation}
+\end{scriptsize}
+%%
+\column{0.5\linewidth}
+\vspace*{-1.2cm}
+\begin{figure}
+%\subfigure[\small Shop-floor work-load]{
+\includegraphics[width=0.85\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/SB-TaskUrgencyStat.eps}
+\caption{\scriptsize Shop-floor work-load}
+\label{fig:r2}
+\end{figure}
+\begin{scriptsize}
+\vspace*{-0.45cm}
+\alert{Active worker ratio:}\\
+\begin{equation} 
+\frac{\textit{Active workers in all tasks}}{\textit{Total available workers}}
+\label{eqn:Delta-Phi}
+\end{equation}
+\end{scriptsize}
+%%
+\end{columns}
+\end{frame}
+%--------------------------------------------------------------
+\begin{frame}[t]{Results: Shop-floor Work-load and Active Workers }
+\begin{columns}
+\column{0.5\linewidth}
+\vspace*{-0.8cm}
+\begin{figure}
+\centering
+%\subfigure[\small Changes in task-urgency (CCM)]{
+\includegraphics[width=0.7\linewidth]
+{/media/Preload/Pub2010/RAS-Draft/images/SB-TaskUrgencyStat.eps}
+%}
+\caption{\scriptsize Shop-floor workload under CCM}
+\end{figure}
+%%
+\vspace*{-1cm}
+\begin{figure}
+\centering
+%\subfigure[\small Changes in task-urgency (CCM)]{
+\includegraphics[width=0.7\linewidth]
+{/media/Preload/Pub2010/RAS-Draft/images/SB-WorkerRatio.eps}
+%}
+\caption{\scriptsize Active worker ratio under CCM}
+\end{figure}
+%%
+\column{0.5\linewidth}
+\vspace*{-0.8cm}
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/SD-TaskUrgencyStat.eps}
+\caption{\scriptsize Shop-floor work-load under LCM}
+\end{figure}
+\vspace*{-1cm}
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/SD-Local1m-Plasticity.eps}
+\caption{\scriptsize Active worker ratio under LCM}
+\end{figure}
+\end{columns}
 \end{frame}
 %---------------------------------------------------------------
-\begin{frame}[t]{Results: Task-performance, Task-specialization and Energy-usage}
-  \begin{itemize}
-    \item \alert{}
-    \end{itemize}
+\begin{frame}[t]{Results: Task-Performance}
+\begin{table}
+\begin{small}
+\begin{center}
+\caption{Shop-floor production and maintenance task performance}
+\begin{tabular}{|p{2in}|c|c|}
+\hline \textbf{Series} & \textbf{APCD} & \textbf{APMW} (time-step) \\ 
+\hline \alert{A.} Centralized communication, \protect\newline 8 robots, 2 tasks, 2 $m^2$ area & 1.22 & 1\\ 
+\hline \alert{B.} Centralized communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area & 2.3 & 3\\
+\hline \alert{C.} Local communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area, $r_{comm}$=0.5m & 1.42 & 5\\
+\hline \alert{D.} Local communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area, $r_{comm}$=1m  & 1.46 & 2\\
+\hline
+\end{tabular}
+\label{table:motion-cmp} 
+\end{center}
+\end{small}
+\end{table}
 \end{frame}
 %---------------------------------------------------------------
 \begin{frame}[t]{Results: Task-specialization}
-  \begin{itemize}
-    \item \alert{}
-    \end{itemize}
+\begin{small}
+\alert{Overall group task-specialization} in terms of peak values of sensitization of all robots:
+\vspace*{-0.25cm}
+\begin{equation}
+K^G_{avg} = \frac{1}{N}\sum_{i=1}^{N} \max_{j=1}^M\left ( k^i_{j, q} \right ) 
+\label{eqn:K-G}
+\end{equation}
+Time-step values ($q$) taken to reach those peak values for all robots:
+%%
+\vspace*{-0.25cm}
+\begin{equation}
+Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
+\label{eqn:Q-G}
+\end{equation}
+\end{small}
+%%
+\vspace*{-0.75cm}
+\begin{table}
+\begin{small}
+\begin{center}
+\caption{Task-specialization values of the robots}
+\begin{tabular}{|c|c|c|}
+\hline Series & \textbf{$ K^G_{avg}$} (SD) & \textbf{$ Q^G_{avg}$} (SD) \\ 
+\hline \alert{A} & \alert{0.40} (0.08)& \alert{38} (13)\\ 
+\hline B & 0.30 (0.03) & 18 (5)\\
+\hline \alert{C}  & \alert{0.39} (0.17) & \alert{13} (7)\\
+\hline D  & 0.27 (0.1) & 11 (5)\\
+\hline
+\end{tabular}
+\label{table:motion-cmp} 
+\end{center}
+\end{small}
+\end{table}
 \end{frame}
 %---------------------------------------------------------------
 \begin{frame}[t]{Results: Energy-usage}
-  \begin{itemize}
-    \item \alert{}
-    \end{itemize}
+\begin{table}
+\begin{small}
+\begin{center}
+\caption{Sum of translations of robots in our experiments.}
+\begin{tabular}{|p{2in}|c|c|}
+\hline \textbf{Series} & \textbf{Average translation (m)} & \textbf{SD} \\ 
+\hline \alert{A.} Centralized communication, \protect\newline 8 robots, 2 tasks, 2 $m^2$ area & 2.631 & 0.804\\ 
+\hline \alert{B.} Centralized communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area & \alert{13.882} & 3.099\\
+\hline \alert{C.} Local communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area, $r_{comm}$=0.5m & \alert{4.907} & 1.678\\
+\hline \alert{D.} Local communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area, $r_{comm}$=1m  & 4.854 & 1.592\\
+\hline
+\end{tabular}
+\label{table:motion-cmp} 
+\end{center}
+\end{small}
+\end{table}
 \end{frame}
 %---------------------------------------------------------------
 \begin{frame}[t]{Results: Communication Loads}
-  \begin{itemize}
-    \item \alert{}
-    \end{itemize}
+\begin{columns}
+\column{0.5\linewidth}
+\vspace*{-0.8cm}
+\begin{figure}
+\centering
+%\subfigure[\small Changes in task-urgency (CCM)]{
+\includegraphics[width=0.7\linewidth]
+{/media/Preload/Pub2010/RAS-Draft/images/SA-8Robot-SignalingFreqStat.eps}
+%}
+\caption{\scriptsize Frequency of \texttt{TaskInfo} signalling under Series A}
+\end{figure}
+%%
+\vspace*{-1cm}
+\begin{figure}
+\centering
+%\subfigure[\small Changes in task-urgency (CCM)]{
+\includegraphics[width=0.7\linewidth]
+{/media/Preload/Pub2010/RAS-Draft/images/SB-SignalingFreqStat.eps}
+%}
+\caption{\scriptsize Frequency of \texttt{TaskInfo} signalling under Series B}
+\end{figure}
+%%
+\column{0.5\linewidth}
+\vspace*{-0.8cm}
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/SC-Local-500cm-SignalingFreqStat.eps}
+\caption{\scriptsize Frequency of \texttt{TaskInfo} signalling under Series C}
+\end{figure}
+\vspace*{-1cm}
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/SD-Local-1m-SignalingFreqStat.eps}
+\caption{\scriptsize Frequency of \texttt{TaskInfo} signalling under Series D}
+\end{figure}
+\end{columns}
 \end{frame}
 
 %%%===========================================================
