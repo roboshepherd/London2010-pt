@@ -1,0 +1,386 @@
+% Setup appearance:
+\documentclass{beamer}
+\usetheme{Frankfurt} % right index Marburg
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+% Standard packages
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{makeidx} % allows for indexgeneration
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{mathptmx} % use Times fonts if available on your TeX system
+\usepackage{setspace}
+\usepackage{epsfig}
+% Setup TikZ
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+% Author, Title, etc.
+\title[Self-organized Multi-robot Task~Allocation] 
+{%
+  Self-organized Multi-robot Task~Allocation%
+}
+
+\author[MOFSarker]
+{
+  Md Omar Faruque Sarker
+}
+
+\institute[UWN]
+{
+ Cognitive Robotics Research Centre\\
+ University of Wales, Newport
+}
+
+\date{October 2010}
+
+
+
+% The main document
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+%%%===========================================================
+\section{Introduction}
+%%--------------------------------------------------
+\begin{frame}[t]{Multi-robot Task Allocation (MRTA)}
+	
+\begin{block}{What is MRTA?}
+In a multi-tasking environment dynamically allocate appropriate tasks to appropriate robots considering the  changes in \alert{task-requirements, team-performance and environment.}
+\end{block}
+  	
+\begin{block}{Why MRTA is difficult?}
+In typical large distributed multi-robot teams:
+\begin{itemize}
+\item No centralized planner or coordinator
+\item \alert{Robots have limited ability}\\
+$\rightarrow$ \small to sense, communicate and interact locally
+\item \normalsize \alert{Robots have limited world-views}\\ 
+$\rightarrow$ \small knowledge of past, present and future actions of others
+\end{itemize}
+\end{block}
+  	
+\end{frame}
+%%--------------------------------------------------
+\begin{frame}[t]{Major Approaches for MRTA}
+ \begin{columns}
+      \column{.5\textwidth}	
+\begin{block}{Explicit allocation}
+Through \alert{explicit modelling} of environment, tasks, robot capabilities. Some forms are: knowledge based, market based, role/value based, control theoretic. 
+\begin{itemize}
+\item \small Pros: Straight-forward to design, implement and analyse formally. % predictable
+\item \small Cons: \alert{Not suitable for large teams ($>$ 10) and heavy dependency on explicit global broadcast communication.}
+\end{itemize}
+\end{block}
+ \column{.5\textwidth}
+\begin{block}{Self-organized allocation}
+Through \alert{emergent group behaviour} produced by the local interaction and implicit or local communication. Most common form is: response threshold based approach.
+\begin{itemize}
+\item \small Pros: Suitable for large teams, no explicit model, implicit/local communication
+\item \small Cons: \alert{Difficult to design, implement, analyse and limited to one specific global task.} % unpredictable
+\end{itemize}
+\end{block}
+\end{columns}
+\end{frame}
+%%--------------------------------------------------
+\begin{frame}[t]{Self-organization}
+\begin{block}{What is Self-organization?}
+Pattern formation in both biological and physical systems through the interactions internal to the system (Camazine et al. 2001).%\\
+%$\rightarrow$ \small global patterns from local interactions.
+\end{block}
+\begin{block}{Why Self-organized approach to MRTA?}
+\begin{itemize}
+\item \normalsize \alert{Implementing simple agent behaviours is economical}\\
+$\rightarrow$ \small no sophisticated cognitive agents.
+\item \normalsize \alert{Easily scalable for large robot-teams and tasks}\\  
+$\rightarrow$ \small no explicit modelling of environment.
+\item \normalsize \alert{Fault-tolerant}\\ 
+$\rightarrow$ \small no leaders, templates or blue-prints.
+\item \normalsize \alert{Energy-efficient}\\
+$\rightarrow$ \small no costly communication or computation overhead.
+\end{itemize}
+\end{block}
+\end{frame}
+%%--------------------------------------------------
+\begin{frame}[t]{Ingredients of Self-organization}
+\begin{columns}
+\column{0.7\textwidth}
+\begin{figure}
+\centering
+\includegraphics[height=0.7\textwidth, angle=0]
+{/media/Preload/Pub2010/ThoughtsLinedUp/images/dia-files/self-org-1}
+%figure caption is below the figur
+\caption{\scriptsize The four ingredients of self-organization}
+\label{fig:self-org} % Give a unique label
+\end{figure}
+\column{0.3\textwidth}
+\scriptsize Examples:
+      \begin{tabular}{l|p{1in}}
+      \hline
+      A & \scriptsize \alert{Ants' recruitments to food source} through trail laying/following\\
+      \hline
+     B & \scriptsize \alert{Overcrowding} at food sources\\
+     \hline
+     C & \scriptsize \alert{Various types of communications} through peer-to-peer, broadcast or stigmergic\\
+     \hline
+     D & \scriptsize \alert{Randomness} and/or error in trail-following that leads to discover new food sources\\
+     \hline       
+      \end{tabular}
+
+\end{columns}
+\end{frame}
+%--------------------------------------------
+\begin{frame}[t]{Self-regulation of an Agent}
+
+\begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includegraphics[height=0.5\textwidth, angle=0]
+{/media/Preload/Pub2010/ThoughtsLinedUp/images/dia-files/self-org-agent}
+%figure caption is below the figur
+\caption{\scriptsize Three major interfaces of a self-organized agent}
+\label{fig:self-org-agent} % Give a unique label
+\end{figure}
+\column{0.5\textwidth}
+\scriptsize \alert{Self-organization in birds nesting}
+      \begin{tabular}{p{0.7in}|p{1.2in}}
+      \hline
+      Simple \protect\newline behavioural rules & \scriptsize \alert{Follow: \textit{``I nest close where you nest \protect\newline ... \protect\newline unless overcrowded''}} \\
+      \hline
+     Local \protect\newline communication & \scriptsize \alert{Communications through local broadcast signals}\\
+     \hline
+     Local \protect\newline interactions & \scriptsize \alert{Courtship display with neighbours}\\
+	\hline
+      \end{tabular}
+
+\end{columns}
+\end{frame}
+%%--------------------------------------------------
+%%%===========================================================
+\section{Task Allocation by Attractive Field Model (AFM)}
+%%--------------------------------------------------
+\begin{frame}[t]{Attractive Field Model (AFM)}	
+\begin{block}{Features of AFM}
+\begin{itemize}
+\item \alert{Interdisciplinary:} \small From the observation of ant, human and robotic social systems. 
+\item \alert{Abstraction:} \small Sufficient abstraction to accommodate different sensing and communication models.
+\end{itemize}
+\end{block}
+  	
+\begin{block}{Requirements of AFM}
+\begin{enumerate}
+\item \normalsize  \alert{Concurrence:} \small The simultaneous presence of several options or tasks, at least a single task and the option of not doing any task. 
+\item \normalsize  \alert{Continuous flow of information:} \small Establish a flow of information to perceive tasks and receive feedback on system performance.
+\item \normalsize  \alert{Sensitization:} \small Each individual must have different levels of preference or {\em sensitivity} to the available tasks.
+\item \normalsize  \alert{Forgetting:} \small A mechanism by which the sensitisation levels are reduced or {\em forgotten} e.g. a slow general decay of sensitisation.
+\end{enumerate}
+\end{block}  	
+\end{frame}
+%%--------------------------------------------------
+\begin{frame}[t]{AFM as a Bipartite Network}
+  \begin{columns}
+\column{0.5\textwidth}
+\begin{figure}
+\centering
+\includegraphics[height=0.65\textwidth, angle=0]
+{/media/Preload/Pub2010/ThoughtsLinedUp/images/AFM-Diag2.eps}
+%figure caption is below the figur
+\caption{\scriptsize The attractive filed model (AFM)}
+\label{fig:afm} % Give a unique label
+\end{figure}
+\column{0.55\textwidth}
+\begin{scriptsize}
+%\scriptsize \alert{AFM as a bipartite nework}
+      \begin{tabular}{p{0.85in}|p{1.2in}}
+      \hline
+      Source nodes (o) & \scriptsize tasks to be allocated to agents\\
+      \hline
+      Agent nodes (x) & \scriptsize E.g., ants, humans, or robots\\
+     \hline
+     Black solid edges & \scriptsize attractive fields that correspond to an agent's perceived stimuli from each task\\
+	\hline
+	Green edges &  attractive fields of no-task option shown as a particular task (w)\\
+	\hline
+	Red lines & not edges, but represent how each agent is allocated to a single task.\\% at any point in time\\
+	\hline
+      \end{tabular}
+\end {scriptsize}
+\end{columns}
+\end{frame}
+%--------------------------------------------------------
+\begin{frame}[t]{Properties of Agents under AFM}	
+\alert{The probability of an agent choosing to perform a task:}
+\begin{equation}
+P_{j}^{i} = \frac{S_{j}^{i}}{\sum_{j=0}^{J} S_{j}^{i}} \hspace*{0.25cm}where,\hspace*{0.25cm}S^{i}_{0} = S^{i}_{RW}   
+\label{eqn:afm3}
+\end{equation}
+\alert{The strength of an attractive field} varies according to the \alert{sensitivity} of the agent is to that task, $k_{j}^{i}$, the \alert{distance} between the task and the agent, $d_{ij}$, and the \alert{\em urgency}, $\phi _{j}$ of the task.
+\begin{equation}
+S_{j}^{i} = tanh\{\frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\}
+\label{eqn:afm1}
+\end{equation} 
+\small {\em Delta distance} $\delta$, is a small constant, to avoid division by zero, in the case when a robot has reached to a task.
+\end{frame}
+
+%%--------------------------------------------------
+\begin{frame}[t]{AFM and Self-organization}
+  \begin{itemize}
+    \item \alert{Positive feedback} through learning\\ Example: Increasing task-sensitization of agents
+\begin{equation}
+ If\hspace*{0.15cm}task\hspace*{0.15cm}is\hspace*{0.15cm}done:\hspace*{0.15cm}  k^i_j \rightarrow   k^i_j \hspace*{0.15cm} + \hspace*{0.15cm} k_{INC}
+\label{eqn:k-inc}
+\end{equation} 
+    \item \alert{Negative feedback} through forgetting\\ Exampel: Decreasing task-sensitization of agents
+\begin{equation}
+ If\hspace*{0.15cm}task\hspace*{0.15cm}is\hspace*{0.15cm}not\hspace*{0.15cm}done:\hspace*{0.15cm}  k^i_j \rightarrow   k^i_j \hspace*{0.15cm} - \hspace*{0.15cm} k_{DEC}
+\label{eqn:k-dec}
+\end{equation}   	
+	\item \alert{Multiple interactions} through continuous flow of information.
+	
+	\item \alert{Randomness} through stochastic task-selection.
+    \end{itemize}
+\end{frame}
+%%--------------------------------------------------
+\begin{frame}[t]{Related issues for using AFM in real-world application}
+  \begin{itemize}
+    \item \alert{Modelling tasks and urgencies}
+    \end{itemize}
+\end{frame}
+%%%===========================================================
+\section{Communication Models}
+\begin{frame}[t]{Centralized and Local Communication Models}
+  \begin{itemize}
+    \item \alert{Software code on {\em HEAD}}
+    \end{itemize}
+\end{frame}
+
+%%%===========================================================
+\section{Implementation}
+\begin{frame}[t]{Hybrid-event Driven Architecture on D-Bus}
+  \begin{itemize}
+    \item \alert{}
+    \end{itemize}
+\end{frame}
+%%%===========================================================
+\section{Results}
+%---------------------------------------------------------------
+\begin{frame}[t]{Results: Shop-floor Work-load and Active Workers}
+  \begin{itemize}
+    \item \alert{}
+    \end{itemize}
+\end{frame}
+%---------------------------------------------------------------
+\begin{frame}[t]{Results: Task-performance, Task-specialization and Energy-usage}
+  \begin{itemize}
+    \item \alert{}
+    \end{itemize}
+\end{frame}
+%---------------------------------------------------------------
+\begin{frame}[t]{Results: Task-specialization}
+  \begin{itemize}
+    \item \alert{}
+    \end{itemize}
+\end{frame}
+%---------------------------------------------------------------
+\begin{frame}[t]{Results: Energy-usage}
+  \begin{itemize}
+    \item \alert{}
+    \end{itemize}
+\end{frame}
+%---------------------------------------------------------------
+\begin{frame}[t]{Results: Communication Loads}
+  \begin{itemize}
+    \item \alert{}
+    \end{itemize}
+\end{frame}
+
+%%%===========================================================
+\section{Conclusions}
+%%-----------------------------------
+\begin{frame}[t]{Conclusions}
+\begin{itemize}
+    \item \normalsize \alert{AFM solves the MRTA issue for a relatively large group}\\
+    $\rightarrow$ \small under both centralized and local communication strategies.
+    \item \normalsize \alert{Task-performance varies under different strategies}\\
+    $\rightarrow$ \small for small group, task-performance degrades in centralized communication\\
+    $\rightarrow$ \small for large group, local  communication increases task-specialization and significantly reduces motions.    
+    \item \normalsize \alert{AFM can model complex multi-tasking environment}\\
+    $\rightarrow$ \small such as a dynamic manufacturing shop-floor.
+    \item \normalsize \alert{Maximizing information flow is not useful}\\
+    $\rightarrow$ \small  under a stochastic task-allocation process, more information tends to cause more task-switching behaviours. % that lowers the level of task-specialization.     
+ \end{itemize}
+\end{frame}
+%%%===========================================================
+\section{Contributions}
+\begin{frame}[t]{General Contributions}
+%
+\begin{itemize}
+    \item \normalsize \alert{Self-organization in artificial systems}\\ 
+$\rightarrow$ \small Self-organized allocation produces specialized workers even when the group size is \textit{small} ($<$ 10).
+    \item \normalsize \alert{Role of communication in self-organization}\\
+$\rightarrow$ \small  Local communication in task-allocation outperforms centralized one in terms of group level task-specialization and energy usage.
+\item \normalsize \alert{Large-scale system development}\\
+$\rightarrow$ \small Bottom-up de-coupled construction of \textit{large} artificial system yields higher advantages particularly, flexibility and integration with inter-operable elements.%in achieving self-regulated MRTA.
+\end{itemize}
+%
+\end{frame}
+%
+\begin{frame}[t]{Specific Contributions}
+\begin{itemize}
+    \item \alert{Interpreted AFM}\\ 
+$\rightarrow$ \small as a basic mechanism for multi-robot task-allocation%, specifically for abstract task-allocation in mult-tasking environment.
+    \item \normalsize \alert{Validated the effectiveness of AFM}\\
+$\rightarrow$ \small with reasonably \textit{large} number of real robots % i.e., 16 e-puck robots.
+\item \normalsize \alert{Compared the performances of two communication and sensing strategies:}%in achieving self-regulated MRTA.
+\begin{enumerate}
+\begin{scriptsize}
+\item Centralized communication like \textbf{Polistes} wasps
+\item Local communication like \textbf{Polybia} wasps
+\end{scriptsize}
+\end{enumerate}
+\item \normalsize \alert{Developed a \textit{flexible} multi-robot control architecture}\\ 
+$\rightarrow$ \small using \textbf{D-Bus} inter-process communication % technology.
+\item \normalsize \alert{Classified MRTA solutions focusing three major issues:}\\ 
+\begin{small}
+%\small Focusing 3 major issues:\\
+%\hspace*{2mm} 
+\begin{enumerate}
+\begin{scriptsize}
+\item Organization of task-allocation
+\item Communication and
+\item Interaction
+\end{scriptsize}
+\end{enumerate}
+\end{small}
+\end{itemize}
+\end{frame}
+%%%===========================================================
+\section{Future works}
+\begin{frame}[t]{Future works}
+  \begin{itemize}
+    \item \normalsize \alert{Deploying our task-allocation model in various task settings}\\
+    $\rightarrow$ \small e.g. dynamic tasks, co-operative tasks, heterogeneous tasks.
+    \item \normalsize \alert{Find optimum communication range}\\
+    $\rightarrow$ \small as a property of self-regulation of individuals.
+    \item \normalsize \alert{Real-world implementation}\\
+    $\rightarrow$ \small e.g. warehouse automation, manufacturing shop-floor or any other multi-tasking environment.
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%
+\end{document}
+
+
