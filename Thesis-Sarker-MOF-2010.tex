@@ -1,6 +1,6 @@
 % Setup appearance:
-\documentclass{beamer}
-\usetheme{Frankfurt} % right index Marburg
+\documentclass[handout,draft]{beamer}
+%\usetheme{Frankfurt} % right index Marburg
 \usefonttheme[onlylarge]{structurebold}
 \setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
 \setbeamertemplate{navigation symbols}{}
@@ -34,11 +34,13 @@
 
 \institute[UWN]
 {
+ PhD Student\\
  Cognitive Robotics Research Centre\\
+ Newport Business School\\
  University of Wales, Newport
 }
 
-\date{October 2010}
+\date{12 October 2010}
 
 
 
@@ -197,7 +199,7 @@ $\rightarrow$ \small no costly communication or computation overhead.
 \begin{figure}
 \centering
 \includegraphics[height=0.65\textwidth, angle=0]
-{/media/Preload/Pub2010/ThoughtsLinedUp/images/AFM-Diag2.eps}
+{/media/Preload/Pub2010/ThoughtsLinedUp/dia-files/AFM-Diag3.eps}
 %figure caption is below the figur
 \caption{\scriptsize The attractive filed model (AFM)}
 \label{fig:afm} % Give a unique label
@@ -342,6 +344,28 @@ S_{j}^{i} = tanh\{\frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\}
       \end{tabular}
 \end {scriptsize}
 \end{columns}  
+\end{frame}
+%--------------------------------------------------------
+\begin{frame}[t]{A Taxonomy of MRTA Solutions }
+\begin{columns}
+\column{0.5\linewidth}
+%\vspace*{-0.8cm}
+\begin{figure}
+\centering
+%\subfigure[\small Changes in task-urgency (CCM)]{
+\includegraphics[width=0.99\linewidth]
+{/media/Preload/Pub2010/RAS-Draft/images/taxonomy-ta-comm-OK.eps}
+%}
+\caption{\scriptsize Classification of MRTA solutions based on task-allocation and communication strategies}
+\end{figure}
+%%
+\column{0.5\linewidth}
+\vspace*{-0.8cm}
+\begin{figure}
+\includegraphics[width=0.99\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/taxonomy-comm-interaction-OK.eps}
+\caption{\scriptsize Information flow caused by different levels of communication and interaction}
+\end{figure}
+\end{columns}
 \end{frame}	
 %%%===========================================================
 \section{Implementation}
@@ -593,7 +617,7 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
  \end{itemize}
 \end{frame}
 %%%===========================================================
-\section{Contributions}
+%\section{Contributions}
 \begin{frame}[t]{General Contributions}
 %
 \begin{itemize}
@@ -637,7 +661,7 @@ $\rightarrow$ \small using \textbf{D-Bus} inter-process communication % technolo
 \end{itemize}
 \end{frame}
 %%%===========================================================
-\section{Future works}
+%\section{Future works}
 \begin{frame}[t]{Future works}
   \begin{itemize}
     \item \normalsize \alert{Deploying our task-allocation model in various task settings}\\
