@@ -58,6 +58,21 @@
 \end{frame}
 %%%===========================================================
 \section{Introduction}
+\begin{frame}[t]{Background: The EPSRC Project: ``Defying the rules - How Self Regulatory Social Systems Work''}
+\begin{block}{Objectives}
+\begin{itemize}
+\item Identify generic rules that allow social systems to develop sustainability through self-regulation.
+\item Improve the performance and robustness in the organization of social systems. 
+\end{itemize}
+\end{block}
+\begin{block}{Our collaborators}
+\begin{itemize}
+\item The Applied Mathematics Research Group,\\ \alert{University of West of England}
+\item The Centre for Systems Studies,\\ \alert{University of Hull}
+\item The Condensed Matter Theory Group,\\ \alert{ Imperial College, London}
+\end{itemize}
+\end{block}
+\end{frame}
 %%--------------------------------------------------
 \begin{frame}[t]{Multi-robot Task Allocation (MRTA)}
 	
@@ -470,7 +485,7 @@ Sum of changes in task-urgencies of\\ all $M$ tasks at $(q+1)^{th}$ step:
 \includegraphics[width=0.7\linewidth]
 {/media/Preload/Pub2010/RAS-Draft/images/SB-TaskUrgencyStat.eps}
 %}
-\caption{\scriptsize Shop-floor workload under CCM}
+\caption{\scriptsize Shop-floor workload under centralized comms.}
 \end{figure}
 %%
 \vspace*{-1cm}
@@ -480,39 +495,39 @@ Sum of changes in task-urgencies of\\ all $M$ tasks at $(q+1)^{th}$ step:
 \includegraphics[width=0.7\linewidth]
 {/media/Preload/Pub2010/RAS-Draft/images/SB-WorkerRatio.eps}
 %}
-\caption{\scriptsize Active worker ratio under CCM}
+\caption{\scriptsize Active worker ratio under centralized comms.}
 \end{figure}
 %%
 \column{0.5\linewidth}
 \vspace*{-0.8cm}
 \begin{figure}
 \includegraphics[width=0.7\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/SD-TaskUrgencyStat.eps}
-\caption{\scriptsize Shop-floor work-load under LCM}
+\caption{\scriptsize Shop-floor work-load under local comms.}
 \end{figure}
 \vspace*{-1cm}
 \begin{figure}
 \includegraphics[width=0.7\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/SD-Local1m-Plasticity.eps}
-\caption{\scriptsize Active worker ratio under LCM}
+\caption{\scriptsize Active worker ratio under local comms.}
 \end{figure}
 \end{columns}
 \end{frame}
 %---------------------------------------------------------------
 \begin{frame}[t]{Results: Task-Performance}
 \begin{table}
-\begin{small}
+\begin{scriptsize}
 \begin{center}
 \caption{Shop-floor production and maintenance task performance}
-\begin{tabular}{|p{2in}|c|c|}
-\hline \textbf{Series} & \textbf{APCD} & \textbf{APMW} (time-step) \\ 
-\hline \alert{A.} Centralized communication, \protect\newline 8 robots, 2 tasks, 2 $m^2$ area & 1.22 & 1\\ 
-\hline \alert{B.} Centralized communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area & 2.3 & 3\\
-\hline \alert{C.} Local communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area, $r_{comm}$=0.5m & 1.42 & 5\\
-\hline \alert{D.} Local communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area, $r_{comm}$=1m  & 1.46 & 2\\
+\begin{tabular}{|p{1.2in}|c|c|}
+\hline \textbf{Series} & \textbf{Production delay} & \textbf{Pending maintenance (time-steps)}\\ 
+\hline \alert{8 robots, 2 tasks, \protect\newline centralized } & 1.22 & 1\\ 
+\hline \alert{16 robots, 4 tasks, \protect\newline centralized } & 2.3 & 3\\
+\hline \alert{16 robots, 4 tasks, \protect\newline local  with range=0.5m} & 1.42 & 5\\
+\hline \alert{16 robots, 4 tasks, \protect\newline local with range=1m}  & 1.46 & 2\\
 \hline
 \end{tabular}
 \label{table:motion-cmp} 
 \end{center}
-\end{small}
+\end{scriptsize}
 \end{table}
 \end{frame}
 %---------------------------------------------------------------
@@ -540,10 +555,10 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 \caption{Task-specialization values of the robots}
 \begin{tabular}{|c|c|c|}
 \hline Series & \textbf{$ K^G_{avg}$} (SD) & \textbf{$ Q^G_{avg}$} (SD) \\ 
-\hline \alert{A} & \alert{0.40} (0.08)& \alert{38} (13)\\ 
-\hline B & 0.30 (0.03) & 18 (5)\\
-\hline \alert{C}  & \alert{0.39} (0.17) & \alert{13} (7)\\
-\hline D  & 0.27 (0.1) & 11 (5)\\
+\hline \alert{8 robots, 2 tasks, centralized} & \alert{0.40} (0.08)& \alert{38} (13)\\ 
+\hline 16 robots, 4 tasks, centralized & 0.30 (0.03) & 18 (5)\\
+\hline \alert{16 robots, 4 tasks, local  with range=0.5m}  & \alert{0.39} (0.17) & \alert{13} (7)\\
+\hline 16 robots, 4 tasks, local  with range=1m  & 0.27 (0.1) & 11 (5)\\
 \hline
 \end{tabular}
 \label{table:motion-cmp} 
@@ -559,10 +574,10 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 \caption{Sum of translations of robots in our experiments.}
 \begin{tabular}{|p{2in}|c|c|}
 \hline \textbf{Series} & \textbf{Average translation (m)} & \textbf{SD} \\ 
-\hline \alert{A.} Centralized communication, \protect\newline 8 robots, 2 tasks, 2 $m^2$ area & 2.631 & 0.804\\ 
-\hline \alert{B.} Centralized communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area & \alert{13.882} & 3.099\\
-\hline \alert{C.} Local communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area, $r_{comm}$=0.5m & \alert{4.907} & 1.678\\
-\hline \alert{D.} Local communication, \protect\newline 16 robots, 4 tasks, 4 $m^2$ area, $r_{comm}$=1m  & 4.854 & 1.592\\
+\hline \alert{8 robots, 2 tasks, centralized} & 2.631 & 0.804\\ 
+\hline \alert{16 robots, 2 tasks, centralized} & \alert{13.882} & 3.099\\
+\hline \alert{16 robots, 4 tasks, local  with range=0.5m} & \alert{4.907} & 1.678\\
+\hline \alert{16 robots, 4 tasks, local  with range=1m}  & 4.854 & 1.592\\
 \hline
 \end{tabular}
 \label{table:motion-cmp} 
@@ -571,7 +586,7 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 \end{table}
 \end{frame}
 %---------------------------------------------------------------
-\begin{frame}[t]{Results: Communication Loads}
+\begin{frame}[t]{Results: Communication Loads in terms of Frequency of \texttt{TaskInfo} signalling}
 \begin{columns}
 \column{0.5\linewidth}
 \vspace*{-0.8cm}
@@ -581,7 +596,7 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 \includegraphics[width=0.7\linewidth]
 {/media/Preload/Pub2010/RAS-Draft/images/SA-8Robot-SignalingFreqStat.eps}
 %}
-\caption{\scriptsize Frequency of \texttt{TaskInfo} signalling under Series A}
+\caption{\scriptsize  Under 8 robots, centralized communication}
 \end{figure}
 %%
 \vspace*{-1cm}
@@ -591,19 +606,19 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 \includegraphics[width=0.7\linewidth]
 {/media/Preload/Pub2010/RAS-Draft/images/SB-SignalingFreqStat.eps}
 %}
-\caption{\scriptsize Frequency of \texttt{TaskInfo} signalling under Series B}
+\caption{\scriptsize Under 16 robots, centralized communication}
 \end{figure}
 %%
 \column{0.5\linewidth}
 \vspace*{-0.8cm}
 \begin{figure}
 \includegraphics[width=0.7\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/SC-Local-500cm-SignalingFreqStat.eps}
-\caption{\scriptsize Frequency of \texttt{TaskInfo} signalling under Series C}
+\caption{\scriptsize Under  16 robots, local communication, range=0.5m}
 \end{figure}
 \vspace*{-1cm}
 \begin{figure}
 \includegraphics[width=0.7\linewidth]{/media/Preload/Pub2010/RAS-Draft/images/SD-Local-1m-SignalingFreqStat.eps}
-\caption{\scriptsize Frequency of \texttt{TaskInfo} signalling under Series D}
+\caption{\scriptsize Under  16 robots, local communication range=1m}
 \end{figure}
 \end{columns}
 \end{frame}
@@ -632,7 +647,7 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
     \item \normalsize \alert{Self-organization in artificial systems}\\ 
 $\rightarrow$ \small Self-organized allocation produces specialized workers even when the group size is \textit{small} ($<$ 10).
     \item \normalsize \alert{Role of communication in self-organization}\\
-$\rightarrow$ \small  Local communication in task-allocation outperforms centralized one in terms of group level task-specialization and energy usage.
+$\rightarrow$ \small  Local communication in task-allocation may outperform centralized one in terms of group level task-specialization and energy usage.
 \item \normalsize \alert{Large-scale system development}\\
 $\rightarrow$ \small Bottom-up de-coupled construction of \textit{large} artificial system yields higher advantages particularly, flexibility and integration with inter-operable elements.%in achieving self-regulated MRTA.
 \end{itemize}
