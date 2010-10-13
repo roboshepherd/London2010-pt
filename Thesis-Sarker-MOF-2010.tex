@@ -24,9 +24,9 @@
 \tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
 
 % Author, Title, etc.
-\title[Self-organized Multi-robot Task~Allocation] 
+\title[Self-regulated Multi-robot Task~Allocation] 
 {%
-  Self-organized Multi-robot Task~Allocation%
+  Self-regulated Multi-robot Task~Allocation%
 }
 
 \author[MOFSarker]
@@ -42,7 +42,7 @@
  University of Wales, Newport
 }
 
-\date{12 October 2010}
+\date{14 October 2010}
 
 
 
@@ -78,7 +78,7 @@
 \begin{frame}[t]{Multi-robot Task Allocation (MRTA)}
 	
 \begin{block}{What is MRTA?}
-In a multi-tasking environment dynamically allocate appropriate tasks to appropriate robots considering the  changes in \alert{task-requirements, team-performance and environment.}
+In a multi-tasking environment \alert{dynamically allocate appropriate tasks to appropriate robots} considering the  changes in task-requirements, team-performance and environment.
 \end{block}
   	
 \begin{block}{Why MRTA is difficult?}
@@ -95,21 +95,22 @@ $\rightarrow$ \small knowledge of past, present and future actions of others
 \end{frame}
 %%--------------------------------------------------
 \begin{frame}[t]{Major Approaches for MRTA}
+\vspace*{-0.4cm}
  \begin{columns}
       \column{.5\textwidth}	
 \begin{block}{Explicit allocation}
-Through \alert{explicit modelling} of environment, tasks, robot capabilities. Some forms are: knowledge based, market based, role/value based, control theoretic. 
+Through \alert{explicit modelling} of environment, tasks, robot capabilities. Some forms are: \alert{knowledge based, market based, role based, control theoretic}. 
 \begin{itemize}
-\item \small Pros: Straight-forward to design, implement and analyse formally. % predictable
-\item \small Cons: \alert{Not suitable for large teams ($>$ 10) and heavy dependency on explicit global broadcast communication.}
+\item \small Pros: Straight-forward to design, implement and analyse formally\footnote{\scriptsize Parker, \textit{J. of Phy. Agents}, 2:2, 2008}. % predictable
+\item \small Cons: \alert{Not suitable for large teams ($>$ 10)}, heavy dependency on explicit global broadcast communication \footnote{\scriptsize Lerman \textit{et. al}, \textit{IJRR} 25, 2006}.
 \end{itemize}
 \end{block}
  \column{.5\textwidth}
 \begin{block}{Self-organized allocation}
-Through \alert{emergent group behaviour} produced by the local interaction and implicit or local communication. Most common form is: response threshold based approach.
+Through \alert{emergent group behaviour} produced by the local interaction and implicit or local communication. Most common form is: \alert{response threshold} based approach.
 \begin{itemize}
-\item \small Pros: Suitable for large teams, no explicit model, implicit/local communication
-\item \small Cons: \alert{Difficult to design, implement, analyse and limited to one specific global task.} % unpredictable
+\item \small Pros: Suitable for large teams, no explicit model, implicit/local communication\footnote{\scriptsize Pugh \& Martinoli, \textit{Swarm Intell:}3, 2009}.
+\item \small Cons: \alert{Difficult to design, implement, analyse and limited to one specific global task.\footnote{\scriptsize Gerkey \& Mataric, \textit{IJRR}, 23, 2004}.} % unpredictable
 \end{itemize}
 \end{block}
 \end{columns}
@@ -592,10 +593,10 @@ Sum of changes in task-urgencies of\\ all $M$ tasks at $(q+1)^{th}$ step:
 \begin{center}
 \caption{Shop-floor production and maintenance task performance}
 \begin{tabular}{|m{1.2in}|p{0.6in}|p{0.6in}|p{0.6in}|p{0.6in}|}
-\hline Experiment Series & \textit{Production \protect\newline delay (SD) s} & \textit{p-value} 1-tailed t-test & \textit{Pending \protect\newline maintenance time (SD) s} & \textit{p-value} 1-tailed t-test\\ 
+\hline Experiment Series & \textit{Production \protect\newline delay (SD) s} & \textit{p-value} \protect\newline 1-tailed t-test\protect\newline (confidence) & \textit{Pending \protect\newline maintenance time (SD) s} & \textit{p-value} 1-tailed t-test\\ 
 \hline \alert{8 robots, 2 tasks, \protect\newline centralized, sample n=5 } & 
 555 (50) & 0.0 & 5 (5) & 0.0\\ 
-\hline \alert{16 robots, 4 tasks, \protect\newline centralized, sample n=5  } & 825 (360) & 0.2 & 15 (65) & 0.0 \\
+\hline \alert{16 robots, 4 tasks, \protect\newline centralized, sample n=5  } & 825 (360) & \alert{0.2 (60\%)} & 15 (65) & 0.0 \\
 \hline \alert{16 robots, 4 tasks, \protect\newline local  with range=0.5m, sample n=3} & 605 (180) & N/A & 25 (85) & N/A\\
 \hline \alert{16 robots, 4 tasks, \protect\newline local with range=1m, sample n=3}  & 615 (200) & 0.0 & 10 (35) & 0.0\\
 \hline
@@ -632,12 +633,12 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 \begin{scriptsize}
 \begin{center}
 \caption{\scriptsize Task-specialization values of the robots}
-\begin{tabular}{|m{1.2in}|c|m{0.6in}|c|m{0.6in}|}
-\hline Experiment Series & $ K^G_{avg}$ (SD) &  1-tailed t-test p-value & $ Q^G_{avg}$ (SD) & 1-tailed t-test p-value \\ 
-\hline 8 robots, 2 tasks, centralized, n=5 & 0.40 (0.08)& 0.0 & 38 (13) & 0.001\\ 
-\hline 16 robots, 4 tasks, centralized, n=5 & 0.30 (0.03) & 0.2 &  18 (5) & 0.2 \\
-\hline 16 robots, 4 tasks, local  with range=0.5m, n=3  & 0.39 (0.17) & N/A & 13 (7) & N/A \\
-\hline 16 robots, 4 tasks, local  with range=1m, n=3  & 0.27 (0.1)& 0.0 & 11 (5) & 0.0\\
+\begin{tabular}{|m{1.2in}|c|m{0.7in}|c|m{0.7in}|}
+\hline Experiment Series & $ K^G_{avg}$ (SD) & \textit{ p-value} \protect\newline 1-tailed t-test (confidence)  & $ Q^G_{avg}$ (SD) & \textit{ p-value} \protect\newline 1-tailed t-test \protect\newline (confidence) \\ 
+\hline \alert{8 robots, 2 tasks, centralized, n=5} & 0.40 (0.08)& 0.0 & 38 (13) & \alert{ 0.001 (99.8\%)}\\ 
+\hline \alert{16 robots, 4 tasks, centralized, n=5} & 0.30 (0.03) & \alert{0.2 (60\%)} &  18 (5) & \alert{0.2 (60\%)}\\
+\hline \alert{16 robots, 4 tasks, local  with range=0.5m, n=3}  & 0.39 (0.17) & N/A & 13 (7) & N/A \\
+\hline \alert{16 robots, 4 tasks, local  with range=1m, n=3}  & 0.27 (0.1)& 0.0 & 11 (5) & 0.0\\
 \hline
 \end{tabular}
 \label{table:motion-cmp} 
@@ -651,10 +652,10 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 \begin{small}
 \begin{center}
 \caption{Sum of translations of robots in our experiments.}
-\begin{tabular}{|p{1.5in}|m{1in}|m{0.6in}|}
-\hline Experiment Series & Average \protect\newline translation \protect\newline(SD) m & \textit{p-value} 1-tailed t-test\\ 
-\hline \alert{8 robots, 2 tasks, centralized, n=5} & 2.631 (0.804) & 0.05\\ 
-\hline \alert{16 robots, 2 tasks, centralized, n=5} & 13.882 (3.099) & \alert{0.001}\\
+\begin{tabular}{|p{1.5in}|m{1in}|m{0.9in}|}
+\hline Experiment Series & Average \protect\newline translation \protect\newline(SD) m & \textit{p-value} \protect\newline 1-tailed t-test (confidence)\\ 
+\hline \alert{8 robots, 2 tasks, centralized, n=5} & 2.631 (0.804) & 0.05 (90\%)\\ 
+\hline \alert{16 robots, 2 tasks, centralized, n=5} & 13.882 (3.099) & \alert{0.001 (99.8\%)}\\
 \hline \alert{16 robots, 4 tasks, local  with range=0.5m, n=3} & 4.907 (1.678) & N/A\\
 \hline \alert{16 robots, 4 tasks, local  with range=1m, n=3}  & 4.854  (1.592) & 0.0\\
 \hline
@@ -719,50 +720,43 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
  \end{block}
 \begin{block}{Future works} 
  \begin{itemize}
-    \item \small Deploying our task-allocation model \alert{in various task settings}\\
+    \item \small Deploy our task-allocation model \alert{in various task settings}\\
 %    $\rightarrow$ \small e.g. dynamic tasks, co-operative tasks, heterogeneous tasks.
     \item \small Relate \alert{communication range} as a property of self-regulation\\
 %    $\rightarrow$ \small as a property of self-regulation of individuals.
     \item \small \alert{Real-world implementation:} e.g. warehouse automation\\
     %$\rightarrow$ \small e.g. warehouse automation, manufacturing shop-floor or any other multi-tasking environment.
-     \item \small Studying the \alert{role of formal structure} on non-formal self-organization.
+     \item \small Study the \alert{role of formal structure} on informal self-organization.
     \end{itemize}
 \end{block}
 \end{frame}
 %%%===========================================================
 %\section{Contributions}
 \begin{frame}[t]{General Contributions}
-%
 \begin{itemize}
-    \item \normalsize \alert{Self-organization in artificial systems}\\ 
-$\rightarrow$ \small Self-organized allocation produces specialized workers even when the group size is \textit{small} ($<$ 10).
-    \item \normalsize \alert{Role of communication in self-organization}\\
-$\rightarrow$ \small  Local communication in task-allocation may outperform centralized one in terms of group level task-specialization and energy usage.
-\item \normalsize \alert{Large-scale system development}\\
+    \item \normalsize \alert{Self-organization}\\ 
+$\rightarrow$ \small Self-organized allocation may produce specialized workers even when the group size is \textit{small} ($<$ 10), unlike assuming generalist workers prevents specialization in small groups\footnote{\scriptsize Garnier \textit{et al. Swarm Intelligence} 1:1, 2007.}.
+    \item \normalsize \alert{Task-allocation}\\
+$\rightarrow$ \small  Local communication in task-allocation may outperform centralized one in terms of energy usage.
+\item \normalsize \alert{System development}\\
 $\rightarrow$ \small Bottom-up de-coupled construction of \textit{large} artificial system yields higher advantages particularly, flexibility and integration with inter-operable elements.%in achieving self-regulated MRTA.
 \end{itemize}
 %
-\end{frame}
-%
+\hrule
+\scriptsize $^1$Garnier \textit{et al. Swarm Intelligence} 1:1, 2007.
+\end{frame}	
+%----------------
 \begin{frame}[t]{Specific Contributions}
 \begin{itemize}
     \item \alert{Interpreted AFM}\\ 
 $\rightarrow$ \small as a basic mechanism for multi-robot task-allocation%, specifically for abstract task-allocation in mult-tasking environment.
     \item \normalsize \alert{Validated the effectiveness of AFM}\\
 $\rightarrow$ \small with reasonably \textit{large} number of real robots % i.e., 16 e-puck robots.
-\item \normalsize \alert{Compared the performances of two communication and sensing strategies:}%in achieving self-regulated MRTA.
-\begin{enumerate}
-\begin{scriptsize}
-\item Centralized communication like \textbf{Polistes} wasps
-\item Local communication like \textbf{Polybia} wasps
-\end{scriptsize}
-\end{enumerate}
+\item \normalsize \alert{Compared centralized \& local communication in MRTA}\\%in achieving self-regulated MRTA.
+$\rightarrow$ \small modelled after social wasps: \textit{Polistes} and \textit{Polybia}
 \item \normalsize \alert{Developed a \textit{flexible} multi-robot control architecture}\\ 
-$\rightarrow$ \small using \textbf{D-Bus} inter-process communication % technology.
+$\rightarrow$ \small using \textit{D-Bus} inter-process communication % technology.
 \item \normalsize \alert{Classified MRTA solutions focusing three major issues:}\\ 
-\begin{small}
-%\small Focusing 3 major issues:\\
-%\hspace*{2mm} 
 \begin{enumerate}
 \begin{scriptsize}
 \item Organization of task-allocation
@@ -770,7 +764,6 @@ $\rightarrow$ \small using \textbf{D-Bus} inter-process communication % technolo
 \item Interaction
 \end{scriptsize}
 \end{enumerate}
-\end{small}
 \end{itemize}
 \end{frame}
 %%%===========================================================
