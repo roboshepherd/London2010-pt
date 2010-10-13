@@ -17,6 +17,7 @@
 \usepackage{mathptmx} % use Times fonts if available on your TeX system
 \usepackage{setspace}
 \usepackage{epsfig}
+\usepackage{array}
 % Setup TikZ
 \usepackage{tikz}
 \usetikzlibrary{arrows}
@@ -61,8 +62,8 @@
 \begin{frame}[t]{Background: The EPSRC Project: ``Defying the rules - How Self Regulatory Social Systems Work''}
 \begin{block}{Objectives}
 \begin{itemize}
-\item Identify generic rules that allow social systems to develop sustainability through self-regulation.
-\item Improve the performance and robustness in the organization of social systems. 
+\item \alert{Identify generic rules} that allow social systems to develop sustainability through \alert{self-regulation}.
+\item Improve the \alert{performance} and \alert{robustness} in the organization of social systems. 
 \end{itemize}
 \end{block}
 \begin{block}{Our collaborators}
@@ -116,95 +117,119 @@ Through \alert{emergent group behaviour} produced by the local interaction and i
 %%--------------------------------------------------
 \begin{frame}[t]{Self-organization}
 \begin{block}{What is Self-organization?}
-Pattern formation in both biological and physical systems through the interactions internal to the system (Camazine et al. 2001).%\\
+\small \alert{Pattern formation} in both biological and physical systems through the local interactions internal to the system \footnote{\scriptsize Camazine \textit{et al.}, Self-organization in Biological Systems, 2001.}.%\\
 %$\rightarrow$ \small global patterns from local interactions.
 \end{block}
-\begin{block}{Why Self-organized approach to MRTA?}
+\begin{columns}
+\column{0.5\textwidth}
+%
+\begin{block}{Ingredients}
 \begin{itemize}
-\item \normalsize \alert{Implementing simple agent behaviours is economical}\\
-$\rightarrow$ \small no sophisticated cognitive agents.
-\item \normalsize \alert{Easily scalable for large robot-teams and tasks}\\  
-$\rightarrow$ \small no explicit modelling of environment.
-\item \normalsize \alert{Fault-tolerant}\\ 
-$\rightarrow$ \small no leaders, templates or blue-prints.
-\item \normalsize \alert{Energy-efficient}\\
-$\rightarrow$ \small no costly communication or computation overhead.
+\item \small \alert{Positive feedback}\\
+$\rightarrow$ \scriptsize ants' recruitments to food source.
+\item \small \alert{Negative feedback}\\  
+$\rightarrow$ \scriptsize overcrowding at food sources.
+\item  \small \alert{Multiple interactions}\\ 
+$\rightarrow$ \scriptsize peer-to-peer, broadcast communication
+\item \small \alert{Randomness}\\
+$\rightarrow$ \scriptsize error in trail-following
 \end{itemize}
 \end{block}
-\end{frame}
-%%--------------------------------------------------
-\begin{frame}[t]{Ingredients of Self-organization}
-\begin{columns}
-\column{0.7\textwidth}
-\begin{figure}
-\centering
-\includegraphics[height=0.7\textwidth, angle=0]
-{/media/Preload/Pub2010/ThoughtsLinedUp/images/dia-files/self-org-1}
-%figure caption is below the figur
-\caption{\scriptsize The four ingredients of self-organization}
-\label{fig:self-org} % Give a unique label
-\end{figure}
-\column{0.3\textwidth}
-\scriptsize Examples:
-      \begin{tabular}{l|p{1in}}
-      \hline
-      A & \scriptsize \alert{Ants' recruitments to food source} through trail laying/following\\
-      \hline
-     B & \scriptsize \alert{Overcrowding} at food sources\\
-     \hline
-     C & \scriptsize \alert{Various types of communications} through peer-to-peer, broadcast or stigmergic\\
-     \hline
-     D & \scriptsize \alert{Randomness} and/or error in trail-following that leads to discover new food sources\\
-     \hline       
-      \end{tabular}
-
+%%
+\column{0.45\textwidth}
+\begin{block}{Why Self-organized approach?}
+\begin{itemize}
+\item  \small Implementing simple agent behaviours is \alert{economical}%\\
+%$\rightarrow$ \scriptsize no sophisticated cognitive agents.
+\item  \small \alert{Easily scalable} for large robot-teams and tasks%\\  
+%$\rightarrow$ \scriptsize no explicit modelling of environment.
+\item  \small \alert{Fault-tolerant}%\\ 
+%$\rightarrow$ \scriptsize no leaders, templates or blue-prints.
+\item \small \alert{Energy-efficient}%\\
+%$\rightarrow$ \scriptsize no costly communication or computation overhead.
+\end{itemize}
+\end{block}
 \end{columns}
 \end{frame}
+%%%--------------------------------------------------
+%\begin{frame}[t]{Ingredients of Self-organization}
+%\begin{columns}
+%\column{0.7\textwidth}
+%\begin{figure}
+%\centering
+%\includegraphics[height=0.7\textwidth, angle=0]
+%{/media/Preload/Pub2010/ThoughtsLinedUp/images/dia-files/self-org-1}
+%%figure caption is below the figur
+%\caption{\scriptsize The four ingredients of self-organization}
+%\label{fig:self-org} % Give a unique label
+%\end{figure}
+%\column{0.3\textwidth}
+%\scriptsize Examples:
+%      \begin{tabular}{l|p{1in}}
+%      \hline
+%      A & \scriptsize \alert{Ants' recruitments to food source} through trail laying/following\\
+%      \hline
+%     B & \scriptsize \alert{Overcrowding} at food sources\\
+%     \hline
+%     C & \scriptsize \alert{Various types of communications} through peer-to-peer, broadcast or stigmergic\\
+%     \hline
+%     D & \scriptsize \alert{Randomness} and/or error in trail-following that leads to discover new food sources\\
+%     \hline       
+%      \end{tabular}
+%
+%\end{columns}
+%\end{frame}
 %--------------------------------------------
-\begin{frame}[t]{Self-regulation of an Agent}
-
-\begin{columns}
-\column{0.5\textwidth}
-\begin{figure}
-\centering
-\includegraphics[height=0.5\textwidth, angle=0]
-{/media/Preload/Pub2010/ThoughtsLinedUp/images/dia-files/self-org-agent}
-%figure caption is below the figur
-\caption{\scriptsize Three major interfaces of a self-organized agent}
-\label{fig:self-org-agent} % Give a unique label
-\end{figure}
-\column{0.5\textwidth}
-\scriptsize \alert{Self-organization in birds nesting}
-      \begin{tabular}{p{0.7in}|p{1.2in}}
-      \hline
-      Simple \protect\newline behavioural rules & \scriptsize \alert{Follow: \textit{``I nest close where you nest \protect\newline ... \protect\newline unless overcrowded''}} \\
-      \hline
-     Local \protect\newline communication & \scriptsize \alert{Communications through local broadcast signals}\\
-     \hline
-     Local \protect\newline interactions & \scriptsize \alert{Courtship display with neighbours}\\
-	\hline
-      \end{tabular}
-
-\end{columns}
-\end{frame}
+%\begin{frame}[t]{Self-regulation of an Agent}
+%
+%\begin{columns}
+%\column{0.5\textwidth}
+%\begin{figure}
+%\centering
+%\includegraphics[height=0.5\textwidth, angle=0]
+%{/media/Preload/Pub2010/ThoughtsLinedUp/images/dia-files/self-org-agent}
+%%figure caption is below the figur
+%\caption{\scriptsize Three major interfaces of a self-organized agent}
+%\label{fig:self-org-agent} % Give a unique label
+%\end{figure}
+%\column{0.5\textwidth}
+%\scriptsize \alert{Self-organization in birds nesting}
+%      \begin{tabular}{p{0.7in}|p{1.2in}}
+%      \hline
+%      Simple \protect\newline behavioural rules & \scriptsize \alert{Follow: \textit{``I nest close where you nest \protect\newline ... \protect\newline unless overcrowded''}} \\
+%      \hline
+%     Local \protect\newline communication & \scriptsize \alert{Communications through local broadcast signals}\\
+%     \hline
+%     Local \protect\newline interactions & \scriptsize \alert{Courtship display with neighbours}\\
+%	\hline
+%      \end{tabular}
+%
+%\end{columns}
+%\end{frame}
 %%--------------------------------------------------
 %%%===========================================================
 \section{Task Allocation by Attractive Field Model (AFM)}
 %%--------------------------------------------------
-\begin{frame}[t]{Attractive Field Model (AFM)}	
+\begin{frame}[t]{Attractive Field Model (AFM)}
+\vspace{-0.5cm}	
 \begin{block}{Features of AFM}
 \begin{itemize}
-\item \alert{Interdisciplinary:} \small From the observation of ant, human and robotic social systems. 
-\item \alert{Abstraction:} \small Sufficient abstraction to accommodate different sensing and communication models.
+\item \alert{Interdisciplinary:} \small Developed from the study of ant, human and robotic social systems\footnote{\scriptsize Arcaute \textit{et al.} Ecol. Complexity, 6:4 2008.}. 
+%Division of labour in ant colonies in terms of attractive fields
+\item \normalsize \alert{Abstract:} \small Sufficiently abstract to accommodate different sensing and communication models.
 \end{itemize}
 \end{block}
   	
-\begin{block}{Requirements of AFM}
+\begin{block}{Requirements of Self-regulation}
 \begin{enumerate}
-\item \normalsize  \alert{Concurrence:} \small The simultaneous presence of several options or tasks, at least a single task and the option of not doing any task. 
-\item \normalsize  \alert{Continuous flow of information:} \small Establish a flow of information to perceive tasks and receive feedback on system performance.
-\item \normalsize  \alert{Sensitization:} \small Each individual must have different levels of preference or {\em sensitivity} to the available tasks.
-\item \normalsize  \alert{Forgetting:} \small A mechanism by which the sensitisation levels are reduced or {\em forgotten} e.g. a slow general decay of sensitisation.
+\item \small  \alert{Concurrence:} ``The simultaneous presence of several tasks''\\ 
+$\rightarrow$ \scriptsize at least a single task and the option of not doing any task. 
+\item \small  \alert{Continuous flow of information:}\\ 
+$\rightarrow$ \scriptsize to perceive tasks and receive feedback on system performance.
+\item \small \alert{Sensitization:} ``Individuals having different levels of preference''\\ 
+$\rightarrow$ \scriptsize to all available tasks.
+\item \small  \alert{Forgetting:} ``A mechanism to reduce sensitisation levels''\\ 
+$\rightarrow$ \scriptsize e.g. a slow general decay of sensitisation.
 \end{enumerate}
 \end{block}  	
 \end{frame}
@@ -212,6 +237,7 @@ $\rightarrow$ \small no costly communication or computation overhead.
 \begin{frame}[t]{AFM as a Bipartite Network}
   \begin{columns}
 \column{0.5\textwidth}
+\vspace*{-0.25cm}
 \begin{figure}
 \centering
 \includegraphics[height=0.65\textwidth, angle=0]
@@ -221,50 +247,81 @@ $\rightarrow$ \small no costly communication or computation overhead.
 \label{fig:afm} % Give a unique label
 \end{figure}
 \column{0.55\textwidth}
+\vspace*{-0.25cm}
 \begin{scriptsize}
 %\scriptsize \alert{AFM as a bipartite nework}
-      \begin{tabular}{p{0.85in}|p{1.2in}}
+      \begin{tabular}{p{0.85in}|p{1.3in}}
       \hline
-      Source nodes (o) & \scriptsize tasks to be allocated to agents\\
-      \hline
-      Agent nodes (x) & \scriptsize E.g., ants, humans, or robots\\
+      Source nodes (o) & \scriptsize \alert{tasks} to be allocated\\      \hline
+      Agent nodes (x) & \scriptsize \alert{agents} e.g., ants, humans, or robots\\
      \hline
-     Black solid edges & \scriptsize attractive fields that correspond to an agent's perceived stimuli from each task\\
+     Black solid edges & \scriptsize \alert{attractive fields} that correspond to an agent's perceived stimuli from each \alert{task}\\
 	\hline
-	Green edges &  attractive fields of no-task option shown as a particular task (w)\\
+	Green edges &  \alert{attractive fields of no-task} option shown as  task (w)\\
 	\hline
-	Black dashed edges & not edges, but represent how each agent is allocated to a single task.\\% at any point in time\\
+	Black dashed edges & not edges, but shows an agent allocated to a task.\\% at any point in time\\
 	\hline
       \end{tabular}
 \end {scriptsize}
 \end{columns}
-\end{frame}
-%--------------------------------------------------------
-\begin{frame}[t]{Properties of Agents under AFM}	
-\alert{The probability of an agent choosing to perform a task:}
+%%
+\begin{columns}
+\column{0.55\textwidth}
+%\vspace*{-0.25cm}
+\small \alert{Agent's probability to choose a task:}
+%\vspace*{-0.5cm}
 \begin{equation}
+\scriptsize
 P_{j}^{i} = \frac{S_{j}^{i}}{\sum_{j=0}^{J} S_{j}^{i}} \hspace*{0.25cm}where,\hspace*{0.25cm}S^{i}_{0} = S^{i}_{RW}   
 \label{eqn:afm3}
+\vspace*{-0.15cm}
 \end{equation}
-\alert{The strength of an attractive field} varies according to the \alert{sensitivity} of the agent is to that task, $k_{j}^{i}$, the \alert{distance} between the task and the agent, $d_{ij}$, and the \alert{\em urgency}, $\phi _{j}$ of the task.
+\scriptsize \alert{$S_{j}^{i}$ and $S^{i}_{RW}$:}  $i$ agent's \alert{stimuli to $j$ task} and \alert{random-walk.}
+\vspace*{0.15cm}
+\column{0.5\textwidth}
+\small \alert{Strength of an attractive field:} 
 \begin{equation}
+\scriptsize
 S_{j}^{i} = tanh\{\frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\}
 \label{eqn:afm1}
-\end{equation} 
-\small {\em Delta distance} $\delta$, is a small constant, to avoid division by zero, in the case when a robot has reached to a task.
+\end{equation}
+%\vspace*{-0.25cm}
+\scriptsize
+\alert{$k_{j}^{i}$, $d_{ij}$:}   $i$ agent's \alert{sensitization} and \alert{distance} to task $j$. \alert{$\phi _{j}$:} \alert{urgency} of task $j$. 
+\end{columns}
 \end{frame}
+%--------------------------------------------------------
+%\begin{frame}[t]{Properties of Agents under AFM}	
+%\alert{The probability of an agent choosing to perform a task:}
+%\begin{equation}
+%P_{j}^{i} = \frac{S_{j}^{i}}{\sum_{j=0}^{J} S_{j}^{i}} \hspace*{0.25cm}where,\hspace*{0.25cm}S^{i}_{0} = S^{i}_{RW}   
+%\label{eqn:afm3}
+%\end{equation}
+%\alert{The strength of an attractive field} varies according to the \alert{sensitivity} of the agent is to that task, $k_{j}^{i}$, the \alert{distance} between the task and the agent, $d_{ij}$, and the \alert{\em urgency}, $\phi _{j}$ of the task.
+%\begin{equation}
+%S_{j}^{i} = tanh\{\frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\}
+%\label{eqn:afm1}
+%\end{equation} 
+%\small {\em Delta distance} $\delta$, is a small constant, to avoid division by zero, in the case when a robot has reached to a task.
+%\end{frame}
 
 %%--------------------------------------------------
 \begin{frame}[t]{AFM and Self-organization}
   \begin{itemize}
-    \item \alert{Positive feedback} through learning\\ Example: Increasing task-sensitization of agents
+    \item \alert{Positive feedback} through learning\\ Example: Increasing task-sensitization of agents\\
+With  an agent's \textit{rate of learning} tasks, $k_{INC}$:
 \begin{equation}
+\alert{ 
  If\hspace*{0.15cm}task\hspace*{0.15cm}is\hspace*{0.15cm}done:\hspace*{0.15cm}  k^i_j \rightarrow   k^i_j \hspace*{0.15cm} + \hspace*{0.15cm} k_{INC}
+ }
 \label{eqn:k-inc}
 \end{equation} 
-    \item \alert{Negative feedback} through forgetting\\ Exampel: Decreasing task-sensitization of agents
+    \item \alert{Negative feedback} through forgetting\\ Example: Decreasing task-sensitization of agents\\
+    With an agent's \textit{rate of forgetting} tasks, $k_{DEC}$:
 \begin{equation}
+\alert{
  If\hspace*{0.15cm}task\hspace*{0.15cm}is\hspace*{0.15cm}not\hspace*{0.15cm}done:\hspace*{0.15cm}  k^i_j \rightarrow   k^i_j \hspace*{0.15cm} - \hspace*{0.15cm} k_{DEC}
+ }
 \label{eqn:k-dec}
 \end{equation}   	
 	\item \alert{Multiple interactions} through continuous flow of information.
@@ -302,7 +359,7 @@ S_{j}^{i} = tanh\{\frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\}
 \begin{enumerate}
 \item \scriptsize Enable learning/forgetting in controller
 \item \scriptsize Perception of distance $\Leftrightarrow$ localization
-\item \scriptsize Provide multiple tasks (include random-walk)
+%\item \scriptsize Provide multiple tasks (include random-walk)
 \end{enumerate}
 \end{block}
 \end{columns}  
@@ -316,12 +373,13 @@ S_{j}^{i} = tanh\{\frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\}
 \includegraphics[height=0.6\textwidth, angle=0]
 {/media/Preload/Pub2010/RAS-Draft/images/VSP.eps}
 %figure caption is below the figur
-\caption{\scriptsize Production and maintenance cycle of a manufacturing shop-floor}
+\caption{\scriptsize Production and maintenance cycles of a manufacturing shop-floor}
 \label{fig:vsp} % Give a unique label
 \end{figure}
 \column{0.53\textwidth}
+\scriptsize AFM validation under a shop-floor scenario\footnote{\scriptsize Sarker \& Dahl. \textit{LNCS} 6234, 2010.}.
 \begin{scriptsize}
-      \begin{tabular}{p{0.7in}|p{1.2in}}
+      \begin{tabular}{m{0.7in}|m{1.2in}}
       \hline
       \alert{Initial task \protect\newline urgency} & \scriptsize workload x $ \delta \phi_{INC}$\\
       \hline
@@ -350,20 +408,27 @@ S_{j}^{i} = tanh\{\frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\}
 \caption{\scriptsize A centralized communication scheme}
 \label{fig:vsp} % Give a unique label
 \end{figure}
-\column{0.6\textwidth}
+\column{0.6\textwidth} 
+\scriptsize \alert{Communication models inspired by wasps}\footnote{\scriptsize Jeanne. \textit{Info. process. in social insects}, 1999}
+\vspace*{0.1cm}
 \begin{scriptsize}
-      \begin{tabular}{p{0.9in}|p{1in}}
+      \begin{tabular}{m{0.95in}|m{1in}}
       \hline
-      \alert{Centralized Model} & \alert{Local Model}\\
+      \textbf{Centralized Model} & \textbf{Local Model}\\
+      \hline
+      \includegraphics[width=2.5cm, height=1.5cm]{/media/Preload/Pub2010/ThoughtsLinedUp/photos/Wasps_wikimedia.org_Polistes_nest_3_sjh.eps} &
+      \includegraphics[width=2.5cm, height=1.5cm]{/media/Preload/Pub2010/ThoughtsLinedUp/photos/Polybiaoccidentalis1.eps}\\
+      \hline      
+      Modelled after \alert{\textit{Polistes}} wasps:
+      \textit{``global sensing no peer-to-peer communication''} & 
+      
+      Modelled after \protect\newline \alert{\textit{Polybia}} wasps: \protect\newline
+     \textit{ ``local sensing local communication''}\\	      
       \hline
       Global \alert{broadcast} messaging & Local \alert{peer-to-peer} messaging\\
       \hline
-      Communicate synchronously & Communicate when peer(s) come in close contact (inside range $r_{comm}$)\\
-      \hline
-      Modelled after \alert{\textit{Polistes} wasps}:
-      global sensing no peer-to-peer communication & Modelled after \protect\newline \alert{\textit{Polybia} wasps}: \protect\newline
-      local sensing local communication\\	  	
-	  \hline
+      Communicate \protect\newline \alert{synchronously} & Communicate when peer(s) come \alert{in close contact} (inside range $r_{comm}$)\\
+  		  \hline
       \end{tabular}
 \end {scriptsize}
 \end{columns}  
@@ -392,44 +457,53 @@ S_{j}^{i} = tanh\{\frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\}
 \end{frame}	
 %%%===========================================================
 \section{Implementation}
-\begin{frame}[t]{Hybrid-event Driven Architecture on D-Bus}
+\begin{frame}[t]{Multi-robot control architecture}
+\vspace*{-0.25cm}
+\begin{tabular}{|c|}
+\hline
+\small Based on our \alert{Hybrid-event Driven Architecture on D-Bus}\footnote{\scriptsize Sarker \& Dahl. UKACC Int'l Conference on Control, CONTROL 2010.}\\
+\hline 
+\end{tabular} 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\textwidth, angle=0]
+\includegraphics[width=0.75\textwidth, angle=0]
 {/media/Preload/Pub2010/RAS-Draft/images/RIL-Expt-Setup1.eps}
 %figure caption is below the figure
-\caption{\scriptsize Hardware and software setup for centralized communication experiments}
+\caption{\scriptsize Hardware and software setup for centralized communication experiments} 
 \label{fig:RIL-Expt-Setup1} % Give a unique label
 \end{figure}
+\vspace*{-0.5cm}
+\hrule
+\scriptsize $^1$Sarker \& Dahl. \textit{Proc. of UKACC Int'l Conference on Control, Coventry, UK} 2010.
 \end{frame}
 %---------------------------------------------------
-\begin{frame}[t]{Tracking e-puck robots}
-\begin{columns}
-\column{0.8\linewidth}
-\begin{figure}
-\centering
-\subfigure[SwisTrack multi-robot tracker]
-{
-\includegraphics[width=0.85\linewidth]
-{/media/Preload/Pub2010/RAS-Draft/images/SwisTrackScreenshot.eps}
-}
-\end{figure}
-\column{0.25\linewidth}
-\begin{figure}
-\subfigure[E-puck robot]{
-\includegraphics[width=2.8cm, height=2.5cm]{/media/Preload/Pub2010/RAS-Draft/images/epuck-happy.eps}
-}
-\label{fig:e-puck}
-\end{figure}
-%%
-\begin{figure}
-\subfigure[E-puck marker]{
-\includegraphics[width=2.5cm, height=1.8cm]{/media/Preload/Pub2010/RAS-Draft/images/20-31412.eps}
-}
-\label{fig:e-puck}
-\end{figure}
-\end{columns}
-\end{frame}
+%\begin{frame}[t]{Tracking e-puck robots}
+%\begin{columns}
+%\column{0.8\linewidth}
+%\begin{figure}
+%\centering
+%\subfigure[SwisTrack multi-robot tracker]
+%{
+%\includegraphics[width=0.85\linewidth]
+%{/media/Preload/Pub2010/RAS-Draft/images/SwisTrackScreenshot.eps}
+%}
+%\end{figure}
+%\column{0.25\linewidth}
+%\begin{figure}
+%\subfigure[E-puck robot]{
+%\includegraphics[width=2.8cm, height=2.5cm]{/media/Preload/Pub2010/RAS-Draft/images/epuck-happy.eps}
+%}
+%\label{fig:e-puck}
+%\end{figure}
+%%%
+%\begin{figure}
+%\subfigure[E-puck marker]{
+%\includegraphics[width=2.5cm, height=1.8cm]{/media/Preload/Pub2010/RAS-Draft/images/20-31412.eps}
+%}
+%\label{fig:e-puck}
+%\end{figure}
+%\end{columns}
+%\end{frame}
 %%%===========================================================
 \section{Results}
 %---------------------------------------------------------------
@@ -475,7 +549,7 @@ Sum of changes in task-urgencies of\\ all $M$ tasks at $(q+1)^{th}$ step:
 \end{columns}
 \end{frame}
 %--------------------------------------------------------------
-\begin{frame}[t]{Results: Shop-floor Work-load and Active Workers }
+\begin{frame}[t]{Results: Shop-floor Work-load  and Active Workers Ratio in 4 tasks experiments with 16 robots}
 \begin{columns}
 \column{0.5\linewidth}
 \vspace*{-0.8cm}
@@ -485,7 +559,7 @@ Sum of changes in task-urgencies of\\ all $M$ tasks at $(q+1)^{th}$ step:
 \includegraphics[width=0.7\linewidth]
 {/media/Preload/Pub2010/RAS-Draft/images/SB-TaskUrgencyStat.eps}
 %}
-\caption{\scriptsize Shop-floor workload under centralized comms.}
+\caption{\scriptsize Shop-floor work-load under  centralized comms.}
 \end{figure}
 %%
 \vspace*{-1cm}
@@ -495,7 +569,7 @@ Sum of changes in task-urgencies of\\ all $M$ tasks at $(q+1)^{th}$ step:
 \includegraphics[width=0.7\linewidth]
 {/media/Preload/Pub2010/RAS-Draft/images/SB-WorkerRatio.eps}
 %}
-\caption{\scriptsize Active worker ratio under centralized comms.}
+\caption{\scriptsize Active worker ratio under  centralized comms.}
 \end{figure}
 %%
 \column{0.5\linewidth}
@@ -517,12 +591,13 @@ Sum of changes in task-urgencies of\\ all $M$ tasks at $(q+1)^{th}$ step:
 \begin{scriptsize}
 \begin{center}
 \caption{Shop-floor production and maintenance task performance}
-\begin{tabular}{|p{1.2in}|c|c|}
-\hline \textbf{Series} & \textbf{Production delay} & \textbf{Pending maintenance (time-steps)}\\ 
-\hline \alert{8 robots, 2 tasks, \protect\newline centralized } & 1.22 & 1\\ 
-\hline \alert{16 robots, 4 tasks, \protect\newline centralized } & 2.3 & 3\\
-\hline \alert{16 robots, 4 tasks, \protect\newline local  with range=0.5m} & 1.42 & 5\\
-\hline \alert{16 robots, 4 tasks, \protect\newline local with range=1m}  & 1.46 & 2\\
+\begin{tabular}{|m{1.2in}|p{0.6in}|p{0.6in}|p{0.6in}|p{0.6in}|}
+\hline Experiment Series & \textit{Production \protect\newline delay (SD) s} & \textit{p-value} 1-tailed t-test & \textit{Pending \protect\newline maintenance time (SD) s} & \textit{p-value} 1-tailed t-test\\ 
+\hline \alert{8 robots, 2 tasks, \protect\newline centralized, sample n=5 } & 
+555 (50) & 0.0 & 5 (5) & 0.0\\ 
+\hline \alert{16 robots, 4 tasks, \protect\newline centralized, sample n=5  } & 825 (360) & 0.2 & 15 (65) & 0.0 \\
+\hline \alert{16 robots, 4 tasks, \protect\newline local  with range=0.5m, sample n=3} & 605 (180) & N/A & 25 (85) & N/A\\
+\hline \alert{16 robots, 4 tasks, \protect\newline local with range=1m, sample n=3}  & 615 (200) & 0.0 & 10 (35) & 0.0\\
 \hline
 \end{tabular}
 \label{table:motion-cmp} 
@@ -533,37 +608,41 @@ Sum of changes in task-urgencies of\\ all $M$ tasks at $(q+1)^{th}$ step:
 %---------------------------------------------------------------
 \begin{frame}[t]{Results: Task-specialization}
 \begin{small}
+\begin{columns}
+\column{0.5\textwidth}
 \alert{Overall group task-specialization} in terms of peak values of sensitization of all robots:
 \vspace*{-0.25cm}
 \begin{equation}
 K^G_{avg} = \frac{1}{N}\sum_{i=1}^{N} \max_{j=1}^M\left ( k^i_{j, q} \right ) 
 \label{eqn:K-G}
 \end{equation}
-Time-step values ($q$) taken to reach those peak values for all robots:
+\column{0.5\textwidth}
+\alert{Time spent to reach peak sensitization values}\\ for all robots:
 %%
 \vspace*{-0.25cm}
 \begin{equation}
 Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 \label{eqn:Q-G}
 \end{equation}
+\end{columns}
 \end{small}
 %%
-\vspace*{-0.75cm}
+\vspace*{-0.25cm}
 \begin{table}
-\begin{small}
+\begin{scriptsize}
 \begin{center}
-\caption{Task-specialization values of the robots}
-\begin{tabular}{|c|c|c|}
-\hline Series & \textbf{$ K^G_{avg}$} (SD) & \textbf{$ Q^G_{avg}$} (SD) \\ 
-\hline \alert{8 robots, 2 tasks, centralized} & \alert{0.40} (0.08)& \alert{38} (13)\\ 
-\hline 16 robots, 4 tasks, centralized & 0.30 (0.03) & 18 (5)\\
-\hline \alert{16 robots, 4 tasks, local  with range=0.5m}  & \alert{0.39} (0.17) & \alert{13} (7)\\
-\hline 16 robots, 4 tasks, local  with range=1m  & 0.27 (0.1) & 11 (5)\\
+\caption{\scriptsize Task-specialization values of the robots}
+\begin{tabular}{|m{1.2in}|c|m{0.6in}|c|m{0.6in}|}
+\hline Experiment Series & $ K^G_{avg}$ (SD) &  1-tailed t-test p-value & $ Q^G_{avg}$ (SD) & 1-tailed t-test p-value \\ 
+\hline 8 robots, 2 tasks, centralized, n=5 & 0.40 (0.08)& 0.0 & 38 (13) & 0.001\\ 
+\hline 16 robots, 4 tasks, centralized, n=5 & 0.30 (0.03) & 0.2 &  18 (5) & 0.2 \\
+\hline 16 robots, 4 tasks, local  with range=0.5m, n=3  & 0.39 (0.17) & N/A & 13 (7) & N/A \\
+\hline 16 robots, 4 tasks, local  with range=1m, n=3  & 0.27 (0.1)& 0.0 & 11 (5) & 0.0\\
 \hline
 \end{tabular}
 \label{table:motion-cmp} 
 \end{center}
-\end{small}
+\end{scriptsize}
 \end{table}
 \end{frame}
 %---------------------------------------------------------------
@@ -572,12 +651,12 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 \begin{small}
 \begin{center}
 \caption{Sum of translations of robots in our experiments.}
-\begin{tabular}{|p{2in}|c|c|}
-\hline \textbf{Series} & \textbf{Average translation (m)} & \textbf{SD} \\ 
-\hline \alert{8 robots, 2 tasks, centralized} & 2.631 & 0.804\\ 
-\hline \alert{16 robots, 2 tasks, centralized} & \alert{13.882} & 3.099\\
-\hline \alert{16 robots, 4 tasks, local  with range=0.5m} & \alert{4.907} & 1.678\\
-\hline \alert{16 robots, 4 tasks, local  with range=1m}  & 4.854 & 1.592\\
+\begin{tabular}{|p{1.5in}|m{1in}|m{0.6in}|}
+\hline Experiment Series & Average \protect\newline translation \protect\newline(SD) m & \textit{p-value} 1-tailed t-test\\ 
+\hline \alert{8 robots, 2 tasks, centralized, n=5} & 2.631 (0.804) & 0.05\\ 
+\hline \alert{16 robots, 2 tasks, centralized, n=5} & 13.882 (3.099) & \alert{0.001}\\
+\hline \alert{16 robots, 4 tasks, local  with range=0.5m, n=3} & 4.907 (1.678) & N/A\\
+\hline \alert{16 robots, 4 tasks, local  with range=1m, n=3}  & 4.854  (1.592) & 0.0\\
 \hline
 \end{tabular}
 \label{table:motion-cmp} 
@@ -626,18 +705,29 @@ Q^G_{avg}= \frac{1}{N}\sum_{i=1}^{N} q^i_{k=k_{max}}
 %%%===========================================================
 \section{Conclusions}
 %%-----------------------------------
-\begin{frame}[t]{Conclusions}
+\begin{frame}[t]{Conclusions \& Future works}
+\begin{block}{Conclusions}
 \begin{itemize}
-    \item \normalsize \alert{AFM solves the MRTA issue for a relatively large group}\\
-    $\rightarrow$ \small under both centralized and local communication strategies.
-    \item \normalsize \alert{Task-performance varies under different strategies}\\
-    $\rightarrow$ \small for small group, task-performance degrades in centralized communication\\
-    $\rightarrow$ \small for large group, local  communication increases task-specialization and significantly reduces motions.    
-    \item \normalsize \alert{AFM can model complex multi-tasking environment}\\
-    $\rightarrow$ \small such as a dynamic manufacturing shop-floor.
-    \item \normalsize \alert{Maximizing information flow is not useful}\\
-    $\rightarrow$ \small  under a stochastic task-allocation process, more information tends to cause more task-switching behaviours. % that lowers the level of task-specialization.     
+    \item \small \alert{AFM solves the MRTA issue} for a relatively large group.\\
+%    $\rightarrow$ \small under both centralized and local communication strategies.
+    \item \small \alert{Task-performance varies under different strategies}\\
+    $\rightarrow$ \small for a reasonably large group, local  communication achieves similar task-performance and task-specialization comparing with a centralized counterpart, but \textit{significantly} reduces motions.    
+    \item \small AFM can model complex \alert{multi-tasking environment}\\
+    \item \small \alert{Maximizing information flow} may not be  useful\\
+    %$\rightarrow$ \small  under a stochastic task-allocation process, more information tends to cause more task-switching behaviours. % that lowers the level of task-specialization.     
  \end{itemize}
+ \end{block}
+\begin{block}{Future works} 
+ \begin{itemize}
+    \item \small Deploying our task-allocation model \alert{in various task settings}\\
+%    $\rightarrow$ \small e.g. dynamic tasks, co-operative tasks, heterogeneous tasks.
+    \item \small Relate \alert{communication range} as a property of self-regulation\\
+%    $\rightarrow$ \small as a property of self-regulation of individuals.
+    \item \small \alert{Real-world implementation:} e.g. warehouse automation\\
+    %$\rightarrow$ \small e.g. warehouse automation, manufacturing shop-floor or any other multi-tasking environment.
+     \item \small Studying the \alert{role of formal structure} on non-formal self-organization.
+    \end{itemize}
+\end{block}
 \end{frame}
 %%%===========================================================
 %\section{Contributions}
@@ -684,81 +774,20 @@ $\rightarrow$ \small using \textbf{D-Bus} inter-process communication % technolo
 \end{itemize}
 \end{frame}
 %%%===========================================================
-%\section{Future works}
-\begin{frame}[t]{Future works}
-  \begin{itemize}
-    \item \normalsize \alert{Deploying our task-allocation model in various task settings}\\
-    $\rightarrow$ \small e.g. dynamic tasks, co-operative tasks, heterogeneous tasks.
-    \item \normalsize \alert{Find optimum communication range}\\
-    $\rightarrow$ \small as a property of self-regulation of individuals.
-    \item \normalsize \alert{Real-world implementation}\\
-    $\rightarrow$ \small e.g. warehouse automation, manufacturing shop-floor or any other multi-tasking environment.
-     \item \normalsize \alert{Studying the role of formal structure on non-formal self-organization}\\
-    $\rightarrow$ \small see in next few slides.
-    \end{itemize}
-\end{frame}
-%%-----------------------------------
-\begin{frame}[t]{How long do you think they'll take to organize themselves in rows and start the Prayer?}
-\begin{columns}
-\column{0.5\linewidth}
-\begin{figure}
-\centering
-%\subfigure[\small Changes in task-urgency (CCM)]{
-\includegraphics[width=0.75\linewidth]
-{/media/Preload/Pub2010/ThoughtsLinedUp/photos/kabah-image001.eps}
-%}
-\caption{\scriptsize The crowd of \alert{3 million Muslims} preparing for Prayer at the holy mosque Kaaba.}
-\end{figure}
-%%
+%%\section{Future works}
+%\begin{frame}[t]{Future works}
+%  \begin{itemize}
+%    \item \normalsize \alert{Deploying our task-allocation model in various task settings}\\
+%    $\rightarrow$ \small e.g. dynamic tasks, co-operative tasks, heterogeneous tasks.
+%    \item \normalsize \alert{Find optimum communication range}\\
+%    $\rightarrow$ \small as a property of self-regulation of individuals.
+%    \item \normalsize \alert{Real-world implementation}\\
+%    $\rightarrow$ \small e.g. warehouse automation, manufacturing shop-floor or any other multi-tasking environment.
+%     \item \normalsize \alert{Studying the role of formal structure on non-formal self-organization}\\
+%    $\rightarrow$ \small see in next few slides.
+%    \end{itemize}
+%\end{frame}
 
-%%
-\column{0.5\linewidth}
-\vspace*{-1cm}
-\begin{figure}
-%\subfigure[\small Shop-floor work-load]{
-\includegraphics[width=0.99\linewidth]{/media/Preload/Pub2010/ThoughtsLinedUp/photos/kabah-image002.eps}
-\caption{\scriptsize They are from countries all over the world \alert{with different languages, and not trained for any military drills.}}
-\label{fig:r2}
-\end{figure}
-%%
-\end{columns}
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}[t]{But when the Prayer time comes...}
-\begin{figure}
-\centering
-\includegraphics[width=0.75\linewidth]
-{/media/Preload/Pub2010/ThoughtsLinedUp/photos/kabah-imam.eps}
-\caption{\small The leader of the congregation (\textit{Sheikh Sudais of Makkah}) stands up and says \alert{ESTAWOO == Arrange Yourselves}}
-\end{figure}
-\end{frame}
-%-----------------------------------------------------
-\begin{frame}[t]{What happens then...?}
-\begin{columns}
-\column{0.5\linewidth}
-\vspace*{-0.2cm}
-\begin{figure}
-\centering
-%\subfigure[\small Changes in task-urgency (CCM)]{
-\includegraphics[width=0.99\linewidth]
-{/media/Preload/Pub2010/ThoughtsLinedUp/photos/kabah-image005.eps}
-%}
-\caption{\small  Within seconds, the whole scene changed}
-\end{figure}
-%%
-
-%%
-\column{0.5\linewidth}
-%\vspace*{-1cm}
-\begin{figure}
-%\subfigure[\small Shop-floor work-load]{
-\includegraphics[width=0.93\linewidth]{/media/Preload/Pub2010/ThoughtsLinedUp/photos/kabah-image004.eps}
-\caption{\small \alert{The crowd of 3 million Muslims arranged themselves in organized rows in NO TIME!}}
-\label{fig:r2}
-\end{figure}
-%%
-\end{columns}
-\end{frame}
 %%%%%%%%%%%%%%
 \end{document}
 
