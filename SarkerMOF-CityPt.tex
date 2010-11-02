@@ -1,0 +1,379 @@
+% Setup appearance:
+%\documentclass[handout,draft]{beamer}
+\documentclass{beamer}
+\usetheme{Frankfurt} % right index Marburg
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+% Standard packages
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{makeidx} % allows for indexgeneration
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{mathptmx} % use Times fonts if available on your TeX system
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{array}
+% Setup TikZ
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+% Author, Title, etc.
+\title[Self-organized semantic NeLI]
+{%
+  Self-organized Semantic NeLI
+  } 
+\subtitle
+{
+Through Self-organized Intelligent Frameworks Using Semantic Web, Web 2.0 and Social Networking Tools %
+}
+
+\author[MOFSarker]
+{
+  M. O. Faruque Sarker
+}
+
+\institute[UWN]
+{
+ PhD Candidate\\
+ Cognitive Robotics Research Centre\\
+ Newport Business School\\
+ University of Wales, Newport
+}
+
+\date{2 November 2010}
+
+
+
+% The main document
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+%%%===========================================================
+\section{Introduction}
+\begin{frame}[t]{Background: Web 2.0, Semantic web and Self-organization}
+\vspace*{-0.15cm}
+\begin{block}{Interconnections with self-organization }
+\begin{itemize}
+\item \small Web 2.0 is based on \alert{bottom-up processes}\\ 
+$\rightarrow$ \scriptsize users generate contents through explicit and implicit social interactions.
+\item \small Complex patterns can be resulted from \alert{simple behavioural rules}\\ 
+$\rightarrow$ \scriptsize intelligence is not necessarily outcome of sophisticated agent cognition
+\end{itemize}
+\end{block}
+%%
+\begin{columns}
+\column{0.7\textwidth}
+\vspace*{-0.15cm}
+\begin{block}{A Self-organized approach}
+\begin{itemize}
+\item \small \alert{Pattern formation} through the local interactions internal to the system \footnote{\tiny Camazine \textit{et al.}, Self-organization in Biological Systems, 2001.}
+%\item \small Shows \alert{four perspectives:\footnote{\tiny Camazine \textit{et al.}, Self-organization in Biological Systems, 2001.}}\\
+%\scriptsize i) positive feedback, ii) negative feedback, iii) multiple interactions and iv) randomness
+\item \small Needs \alert{four elements:}\footnote{\tiny Sarker \& Dahl. \textit{LNCS} 6234, 2010.}\\
+\scriptsize i) continuous flow of information, ii) concurrence, iii) learning and iv) forgetting of agents
+\item \small \alert{Scalable, adaptable and robust} solutions\\
+$\rightarrow$ \scriptsize Depends on less communication/computation, almost no user/environment modelling
+\end{itemize}
+\end{block}
+%%
+\hspace*{-0.25cm}
+\column{0.3\textwidth}
+\vspace*{-0.4cm}
+\begin{figure}
+\centering
+\includegraphics[width=0.99\textwidth, angle=0]
+{/media/Preload/Pub2010/ThoughtsLinedUp/photos/termites_nest.eps}
+%figure caption is below the figur
+\caption{\scriptsize A termite nest from bottom-up approach}
+\label{fig:afm} % Give a unique label
+\end{figure}
+%%
+\end{columns}
+\end{frame}
+%%=====================================================
+\section{A Semantic Search and Navigation System}
+\begin{frame}[t]{Self-organized semantic search through attractive field model}
+\vspace*{-0.25cm}
+  \begin{columns}
+\column{0.5\textwidth}
+\vspace*{-0.5cm}
+\begin{figure}
+\centering
+\includegraphics[height=0.65\textwidth, angle=0]
+{/media/Preload/Pub2010/ThoughtsLinedUp/dia-files/AFM-Diag-abstract2.eps}
+\vspace*{-0.5cm}
+\caption{\scriptsize The attractive filed model (AFM)}
+\label{fig:afm} % Give a unique label
+\end{figure}
+\column{0.55\textwidth}
+\vspace*{-0.25cm}
+\begin{scriptsize}
+      \begin{tabular}{m{0.85in}|m{1.3in}}
+      \hline
+      Source nodes (o) & \scriptsize \alert{items} to be searched\\      \hline
+      Agent nodes (x) & \scriptsize \alert{user search agents} e.g.,  mozilla browser\\
+     \hline
+     Black solid edges & \scriptsize \alert{attractive fields} that correspond to an agent's stimuli for \alert{related items}\\
+	\hline
+	Green edges &  \alert{attractive fields of unrelated items}  shown as  (w)\\
+	%\hline
+	%Black dashed edges & not edges, but shows an agent found an item.\\% at any point in time\\
+	\hline
+      \end{tabular}
+\end {scriptsize}
+\vspace*{-0.25cm}
+\end{columns}
+%%
+\small \alert{Strength of an attractive field:} 
+\alert{$ S_{j}^{i} \propto \frac{k_{j}^{i}}{d_{ij}} \phi _{j}\ $}
+%\vspace*{-0.25cm}
+%\begin{equation}
+%\[
+%\scriptsize
+%S_{j}^{i} \propto \frac{k_{j}^{i}}{d_{ij}+\delta } \phi _{j}\
+%\]
+%%\label{eqn:afm1}
+%\end{equation}
+%\vspace*{-0.25cm}
+\begin{columns}
+\column{0.5\textwidth}
+\vspace*{-0.25cm}
+\begin{block}{Parameters}
+
+\small
+\alert{$k_{j}^{i}$}   $i$ agent's \alert{sensitization} for item  $j$\\
+$\rightarrow$ \scriptsize How much $i$ is sensitive to $j$ item?\\
+\small
+\alert{$d_{ij}$:} $i$ agent's \alert{location preference}\\
+$\rightarrow$ \scriptsize How far $j$ is located from $i$?\\
+\small
+\alert{$\phi _{j}$:} \alert{relative urgencies} of item $j$.\\
+$\rightarrow$ \scriptsize What is the level of urgency of $j$?  
+\end{block}
+
+\column{0.5\textwidth}
+\vspace*{-0.45cm}
+\begin{block}{Learning search patterns}
+%\scriptsize
+\small E.g.: Increasing item sensitization of agents by a rate $k_{INC}$\\
+\vspace*{0.25cm}
+%%With  an agent's \textit{rate of learning} items, $k_{INC}$:
+%\begin{equation}
+\alert{ 
+$ If\hspace*{0.15cm}item\hspace*{0.15cm}is\hspace*{0.15cm}rated:\hspace*{0.15cm}  k^i_j \rightarrow   k^i_j \hspace*{0.15cm} + \hspace*{0.15cm} k_{INC}
+$ }\\
+\vspace*{0.25cm}
+$\rightarrow$ \scriptsize A form of \alert{positive feedback} 
+%\end{equation} 
+%\begin{equation}
+%\alert{
+% If\hspace*{0.15cm}item\hspace*{0.15cm}is\hspace*{0.15cm}not\hspace*{0.15cm}rated:\hspace*{0.15cm}  k^i_j \rightarrow   k^i_j \hspace*{0.15cm} - \hspace*{0.15cm} k_{DEC}
+% }
+%\label{eqn:k-dec}
+%\end{equation}   	
+\end{block}
+\end{columns}
+\end{frame}
+%------------------------------------------------------------
+\begin{frame}[t]{A Frameworks for Semantic Search and Navigation}
+\vspace*{-0.25cm}
+\begin{block}{Key aspects}
+\begin{itemize}
+\item \scriptsize \alert{Easy and interactive}, compatible, support for different users' \alert{personalization} \item \scriptsize \alert{Reasoning} new information from existing information
+\end{itemize}
+\end{block}
+\begin{columns}
+\column{0.6\textwidth}
+\begin{figure}
+\centering
+\includegraphics[height=0.73\textwidth, angle=0]
+{/media/Preload/Pub2010/ThoughtsLinedUp/dia-files/sematic-search-nav.eps}
+%figure caption is below the figur
+\caption{\scriptsize Python based semantic wiki framework}
+\label{fig:ssnf} % Give a unique label
+\end{figure}
+\column{0.5\textwidth} 
+%\scriptsize \alert{A framework for semantic web wiki adopted from open source semantic tools}\footnote{\scriptsize http://semanticweb.org/}
+\vspace*{0.1cm}
+\begin{scriptsize}
+      \begin{tabular}{m{0.25\textwidth}|m{0.6\textwidth}}
+      \hline
+      \textbf{Model} & \textbf{Tools/Frameworks}\\
+      \hline
+      \alert{Database storage} &
+      Domino, Plomino.dominoimport\\
+      \hline      
+	  \alert{Webpage /Knowledge base}	      
+      & 
+      XML, Resource \protect\newline Description Framework, RDF/XML\\	      
+      \hline
+      \alert{Data \protect\newline rendering} & XML, Dublin Core, SPARQL Protocol and RDF Query Language\\
+      \hline
+      \alert{Page transformation} & XML Stylesheet\\
+  		  \hline
+  	 \alert{Web \protect\newline publishing} & HTML/XHTML, JavaScript Object Notation, Wiki Exchange Format\\
+  	\hline
+  	 \alert{Backend} & Python web frameworks\\
+  		  \hline
+	  	 \alert{Frontend} & JavaScript/AJAX\\
+  		  \hline  
+\end{tabular}
+\end{scriptsize}
+\end{columns}  
+\end{frame}
+%%%===========================================================
+\section{Web 2.0 Features for NeLI}
+%%--------------------------------------------------
+\begin{frame}[t]{Web 2.0 in NeLI: Wiki, Blogs, RSS, Podcast}
+\vspace*{-0.25cm}
+%\begin{block}{Key aspects}
+%\begin{itemize}
+%\item \scriptsize Massive \alert{user-generated} contents, up-to-date, \alert{open} and interoperable 
+%\item \scriptsize \alert{Social networking} through communication and interactions
+%\end{itemize}
+%\end{block}
+
+\begin{columns}
+\column{0.6\textwidth}  	
+\begin{block}{Adopting web 2.0 in NeLI}
+\begin{itemize}
+\item \alert{Blogs:} \small One-to-many interactive timely discussions %\\
+$\rightarrow$ \scriptsize e.g. Dimov's \textit{Clinical Cases \& Images\footnote{\scriptsize http://casesblog.blogspot.com/}}
+\item \small \alert{Wikis:} Bottom-up content creation, editing and discussions %\\
+$\rightarrow$ \scriptsize e.g. Flu Wiki\footnote{\scriptsize http://www.fluwikie.com/}
+\item \small \alert{RSS Feeds:} Up-to-date feeds on mobile devices \textit{anytime anywhere}
+\item \small \alert{Social Bookmarking:} Collaborative tagging, link sharing %\\
+$\rightarrow$ \scriptsize e.g. IBM's Dogear%\footnote{\scriptsize http://www.ibm.com/software/lotus/products/connections/dogear.html}
+\item \small \alert{Podcast or Vodcast:} Audio-visual material for increasing awareness
+\end{itemize}
+\end{block}
+%
+\column{0.4\textwidth}  
+%\vspace*{-0.25cm}	
+\begin{block}{Constraints}
+\begin{itemize}
+\begin{small}
+\item  Lack of \alert{authoritative control} over content \item  Lack of \alert{accuracy} 
+\item  Information \alert{overload}
+\item  \alert{Anonymity} %or lack of authorship
+%\item  Requires \alert{monitoring}
+\item Requires \alert{moderating}\\ 
+$\rightarrow$  \scriptsize e.g. Ganfyd\footnote{\scriptsize  http://www.ganfyd.org/}
+\item  \small \alert{Roll-back} is costly\\
+\item  Requires enforcing policies for ensuring \alert{privacy and copyright} issues
+\end{small}
+\end{itemize}
+\end{block}
+\end{columns}  	
+\end{frame}
+%%%===========================================================
+\section{Data-mining and Info Dissemination over Social Networks}
+%%--------------------------------------------------
+\begin{frame}[t]{A framework for Exploiting Social Networks (SN)}	
+%\begin{columns}
+%\column{0.6\textwidth}  
+\begin{block}{Mining SN}
+\begin{itemize}
+\item  \small Relevant page \alert{identification, pre-processing and extraction}\\
+$\rightarrow$  \scriptsize Facebook/Twitter API
+\item  \small \alert{Integration}\\ 
+$\rightarrow$  \scriptsize  Probabilistic approach for name disambiguation, classification
+\item  \small Database \alert{storage,  indexing and access}\\
+$\rightarrow$  \scriptsize Domino, Python wrapper
+\item \small Social network \alert{modelling}\\ 
+$\rightarrow$  \scriptsize semantic modelling, clustering
+\item \small \alert{Search} services\\
+$\rightarrow$ \scriptsize Hot topic, expert search 
+\end{itemize}
+\end{block}
+  	
+\begin{block}{Disseminating public health information over SN}
+\begin{itemize}
+\item \small \alert{Automated delivery} based on RSS subscription
+\item \small \alert{Relevant} information (recall self-organized search)
+\item \small \alert{Low overhead} of information based on user feedback
+\end{itemize}
+\end{block}
+  	
+\end{frame}
+
+%%%===========================================================
+\section{Infectious Disease Monitoring through  Social Networks}
+%%--------------------------------------------------
+\section{Infectious Disease Monitoring through  Social Networks}
+%%--------------------------------------------------
+\begin{frame}[t]{A Framework for Infectious Disease Monitoring through SN}
+\begin{columns}
+\column{0.6\textwidth} 
+\vspace*{-0.35cm} 	
+\begin{block}{HealthMap:  Global Infectious Disease Monitoring Site}
+\begin{itemize}
+\item \small Popular \alert{news-based}\\
+$\rightarrow$ \scriptsize alerts from  multi-sources, last 30 day stats%, alert by country %, Latest alerts
+\item \small \alert{web 1.0 framework}\\ 
+$\rightarrow$ \scriptsize no metadata storage, no knowledge-base, needs human  intervention
+\end{itemize}
+\end{block}
+\vspace*{-0.2cm}   	
+\begin{block}{Going Beyond HealthMap}
+\begin{itemize}
+\item \small \alert{Social-network based:}\\
+$\rightarrow$ \scriptsize biological \& statistical models
+\item \small \alert{Semantic web technology:}\\
+$\rightarrow$ \scriptsize inferred knowledge 
+\item \small \alert{Personalized} alerts\\ 
+$\rightarrow$ \scriptsize over Facebook, Twitter, mobile devices
+\item \small \alert{Self-organized} design and operation \\ 
+$\rightarrow$ \scriptsize scalable, minimum site maintenance overhead, fault-tolerant and mostly automated
+\end{itemize}
+\end{block}
+
+\column{0.5\textwidth}
+\vspace*{-0.25cm} 	  
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth, angle=0]
+{HealthMap_process.eps}
+\newline
+\includegraphics[width=0.9\textwidth, angle=0]
+{HealthMap_arch.eps}
+%figure caption is below the figur
+\caption{\scriptsize HealthMap architecture \protect\newline (Freifeld et al. \textit{J. of the American Medical Informatics Association}:15, 150, 2008)}
+\label{fig:ssnf} % Give a unique label
+\end{figure}
+
+\end{columns}  	
+\end{frame}
+
+%%%===========================================================
+\section{Conclusion and Outlook}
+\begin{frame}[t]{Conclusion and Outlook}
+%  \begin{itemize}
+%    \item \normalsize \alert{Self-organized}\\
+%    $\rightarrow$ \small e.g. dynamic tasks, co-operative tasks, heterogeneous tasks.
+%    \item \normalsize \alert{Find optimum communication range}\\
+%    $\rightarrow$ \small as a property of self-regulation of individuals.
+%    \item \normalsize \alert{Real-world implementation}\\
+%    $\rightarrow$ \small e.g. warehouse automation, manufacturing shop-floor or any other multi-tasking environment.
+%     \item \normalsize \alert{Studying the role of formal structure on non-formal self-organization}\\
+%    $\rightarrow$ \small see in next few slides.
+%    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%
+\end{document}
+
+
