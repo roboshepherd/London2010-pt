@@ -1,0 +1,219 @@
+% Setup appearance:
+%\documentclass[handout,draft]{beamer}
+\documentclass{beamer}
+\usetheme{Frankfurt} % right index Marburg
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+% Standard packages
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{makeidx} % allows for indexgeneration
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{subfigure}
+\usepackage{mathptmx} % use Times fonts if available on your TeX system
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{array}
+% Setup TikZ
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+% Author, Title, etc.
+\title[Developing Distributed Cognition Support Tools]
+{%
+  Developing  Support Tools for Distributed Cognition Analysis
+  } 
+\subtitle
+{
+ Relevance With My Post-doctoral Career Training
+}
+
+\author[MOFSarker]
+{
+  M. O. Faruque Sarker
+}
+
+\institute[UWN]
+{
+ PhD Candidate\\
+ Cognitive Robotics Research Centre\\
+ Newport Business School\\
+ University of Wales, Newport
+}
+
+\date{5 November 2010}
+
+
+
+% The main document
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+%
+%\begin{frame}{Outline}
+%  \tableofcontents
+%\end{frame}
+%%%===========================================================
+%\section{Introduction}
+\begin{frame}[t]{Background: My Early Career in IT}
+%\vspace*{-0.25cm}
+\begin{columns}
+\column{0.6\textwidth}
+\vspace*{-0.15cm}
+\begin{block}{Started as Linux system admin, trainer and tech-writer (2000-2004)}
+During my undergraduate study at Bangladesh University of Engineering \& Technology (BUET), I was:
+\begin{itemize}
+	\item \small \alert{System Administrator (Part-time)}\\
+	 $\rightarrow$ \scriptsize EasySoft Networks Ltd. Dhaka. 	 	\item \small \alert{Tutor/Network Engineer (Part-time)}\\
+	 $\rightarrow$ \scriptsize Institute of Info \& Comm. Tech., BUET	
+		\item \small \alert{Associate Editor (Part-Time)}\\
+	$\rightarrow$ \scriptsize Technology Today Ltd. Dhaka.
+		\item \small \alert{ Systems Engineer (Part-Time)}\\
+	$\rightarrow$ \scriptsize  Ektoo Ltd. Dhaka. 
+\end{itemize}
+\end{block}
+%%
+\hspace*{-0.25cm}
+\column{0.4\textwidth}
+%\vspace*{-0.4cm}
+\begin{figure}
+\centering
+\includegraphics[width=0.99\textwidth, angle=0]
+{/media/Preload/Pub2010/ThoughtsLinedUp/photos/linux-distros.eps}
+%figure caption is below the figur
+\caption{\scriptsize Some Linux distributions I used since 1999}
+\label{fig:afm} % Give a unique label
+\end{figure}
+%%
+\end{columns}
+\end{frame}
+%%--------------------------------------------------
+\begin{frame}{From part-time to full-time IT Professional}
+%\vspace*{-0.25cm}
+\begin{block}{Early inspirations for Software Prototyping (2004-2005)}
+\begin{itemize}
+\item \small As a \alert{\textit{project engineer}} in computerization of a large gas distribution company\\ 
+$\rightarrow$ \scriptsize worked both at Institute of Information \& Communication Technology, BUET and Gas Distribution company's office
+\item \small Completed \alert{a full range of software engineering tasks:}\\
+$\rightarrow$ \scriptsize from requirement specification, system design, database development, data entry and testing\\ 
+\item \small  gained \alert{a broad range of experiences}\\
+$\rightarrow$ \scriptsize in designing/developing \alert{data entry system, database, unit test and deployment} 
+\end{itemize}
+\end{block}
+%%
+\end{frame}
+%%=====================================================
+\begin{frame}[t]{From IT to Robotics and Human Computer Interaction}
+%\vspace*{-0.25cm}
+\begin{columns}
+\column{0.6\textwidth}
+\vspace*{-0.15cm}
+\begin{block}{2005-2007 at Korea Institute of Science \& Technology (KIST)}
+\begin{itemize}
+	\item \small As a \alert{\textit{post-graduate research assistant}} at  Center for Cognitive Robotics Research\\
+	 $\rightarrow$ \scriptsize initial research on humanoid service security, real-time humanoid control.
+	  	 	\item \small Studied \alert{graduate level courses} at KIST and Korea University\\
+	 $\rightarrow$ \scriptsize e.g. Human Machine Interaction, Intelligent Control, AI
+Techniques 
+		\item \small Masters thesis on \alert{knowledge-based service for human-centred robots}\\
+	$\rightarrow$ \scriptsize became a AI-based robot programmer
+			\item \small After Masters course I became \alert{\textit{visiting research scientist}} at KIST!\\
+\end{itemize}
+\end{block}
+%%
+\hspace*{-0.25cm}
+\column{0.4\textwidth}
+%\vspace*{-0.4cm}
+\begin{figure}
+\centering
+\includegraphics[width=0.99\textwidth, angle=0]
+{kbh.eps}
+%figure caption is below the figur
+\caption{\scriptsize Knowledge-Based Human-centered architecture \tiny (Sarker et al. 2007, Proc. of 16th IEEE International Symposium on Robot and Human interactive Communication (RO-MAN 2007), Jeju Island, South Korea)}
+\label{fig:afm} % Give a unique label
+\end{figure}
+%%
+\end{columns}
+\end{frame}
+%%--------------------------------------------------
+\begin{frame}{From humanoid Robot to Distributed Multi Robot System}
+%\vspace*{-0.25cm}
+\begin{block}{Self-organized Multi-robot Task Allocation}
+\begin{itemize}
+\item \small \alert{As a part of the EPSRC collaborative research project} involving human social, biological and artificial social systems\\ 
+$\rightarrow$ \scriptsize deriving local control rules for system-wide self-organized division of labour
+\item \small \alert{A series of software development/integration tasks}\\
+$\rightarrow$ \scriptsize involving applied computer vision, distributed mobile robotics, wireless networking, systems engineering  
+\item \small  Gained \alert{a broad range of experiences}\\ 
+$\rightarrow$ \scriptsize in developing distributed software system, multi-robot tracking and source code management
+\end{itemize}
+\end{block}
+%%
+\begin{block}{Google-Summer-of-Code: Joined in Open Source Coding}
+\begin{itemize}
+\item \small \alert{2009 with BlueZ:} Bluetooth system programming
+\item \small \alert{2010 with Tahoe-LAFS:} A decentralized introduction scheme\\
+$\rightarrow$ \scriptsize for peer-to-peer secure file sharing
+\item \small \alert{Contributed thousands of lines code} in C/C++, Python\\
+$\rightarrow$ \scriptsize learned test-driven development, source code version management
+\end{itemize}
+\end{block}
+%%
+\end{frame}
+%%---------------------------------
+\begin{frame}{Multi-robot Control Framework Developed at Newport}
+\begin{columns}
+\column{0.5\textwidth}
+%\vspace*{-0.4cm}
+\begin{figure}
+\centering
+\includegraphics[width=0.99\textwidth, angle=0]
+{/media/Preload/Pub2010/ThoughtsLinedUp/dia-files/concrete-arch.eps}
+%figure caption is below the figur
+\caption{\scriptsize Hybrid event-driven architecture on D-Bus \tiny (Sarker \& Dahl. UKACC Int'l Conference on Control, CONTROL 2010.)}
+\label{fig:afm} % Give a unique label
+\end{figure}
+%%
+\column{0.5\textwidth}
+%\vspace*{-0.4cm}
+\begin{figure}
+\centering
+\includegraphics[width=0.99\textwidth, angle=0]
+{/media/Preload/Pub2010/ThoughtsLinedUp/images/RIL-Expt-Setup1.eps}
+%figure caption is below the figur
+\caption{\scriptsize Hardware and software implementation \tiny (Sarker \& Dahl. Swarm Intelligence, \textit{LNCS} 6234, 2010.)}
+\label{fig:afm} % Give a unique label
+\end{figure}
+%%
+\end{columns}
+\end{frame}
+%-----------------------------------
+\begin{frame}{Towards Becoming a Faculty and Professional Scientist}
+%\vspace*{-0.25cm}
+\begin{block}{Research Systems Development: An Opportunities to learn more and to develop new skills}
+\begin{itemize}
+\item \small \alert{Software engineering}\\ 
+$\rightarrow$  independent full-cycle real-world application development
+\item \small \alert{Statistical data analysis}\\ 
+$\rightarrow$  data modelling, analysis, data-to-decision 
+\item \small \alert{Research output}\\ 
+$\rightarrow$   conference and journal articles and more
+\item \small \alert{Collaborative knowledge-sharing}\\
+$\rightarrow$  communication and interaction with industry and academia
+\end{itemize}
+\end{block}
+%%
+\end{frame}
+
+%%%%%%%%%%%%%%
+\end{document}
+
+
